@@ -89,25 +89,17 @@ public class PlayerManager : MonoBehaviour
             xPlayerMax = xess.Max();
         }
 
-        float playerOffset = 4f; //half width of a player
-        float mapPaddingOffset = 1f;
-
-        float camMaxPosX = camHalfWidth - playerOffset - mapPaddingOffset;
-
-        //don't go behind start
-        if (xPlayerMax < camHalfWidth)
+        // camera is always in the middle of all players
+        // camera ignores padding
+        float newCamPosX = xPlayerMin + ((xPlayerMax - xPlayerMin) / 2);
+        if (newCamPosX < (camHalfWidth))
         {
-            camera.transform.position = new Vector3(camHalfWidth - mapPaddingOffset, camera.transform.position.y, camera.transform.position.z);
-        }
-        else if (xPlayerMax - xPlayerMin > camHalfWidth) //distance between first and last player
-        {
-            camera.transform.position = new Vector3((xPlayerMin - mapPaddingOffset + camHalfWidth), camera.transform.position.y, camera.transform.position.z);
+            camera.transform.position = new Vector3(camHalfWidth, camera.transform.position.y, camera.transform.position.z);
         }
         else
         {
-            camera.transform.position = new Vector3(xPlayerMax - mapPaddingOffset, camera.transform.position.y, camera.transform.position.z);
+            camera.transform.position = new Vector3(newCamPosX, camera.transform.position.y, camera.transform.position.z);
         }
-
 
     }
 }
