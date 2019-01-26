@@ -18,6 +18,28 @@ public class Player
     [SerializeField]
     public Color color;
 
+    [SerializeField]
+    public int team = 0;  // Team 0 or 1
+
+    public static Character nextCharacter(Character lastCharacter)
+    {
+        return (Character)(((int)lastCharacter + 1) % 4);
+    }
+
+    public static Character prevCharacter(Character lastCharacter)
+    {
+        if (lastCharacter == 0)
+        {
+            return (Character)3;
+        }
+        return (Character)(((int)lastCharacter - 1) % 4);
+    }
+
+    public int characterNumber()
+    {
+        return (int)character;
+    }
+
     public string inputName()
     {
         return "Player" + number + inputType;

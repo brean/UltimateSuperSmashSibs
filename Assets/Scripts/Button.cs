@@ -51,6 +51,7 @@ public class Button : MonoBehaviour
             case 1:
                 if (other.gameObject.CompareTag("Player") && buttonActive)
                 {
+                    //TODO: Play sound
                     StartCoroutine(putUpTheBridge());
                     buttonActive = false;
                     this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
@@ -70,7 +71,7 @@ public class Button : MonoBehaviour
     IEnumerator putUpTheBridge(){
         mySupport.SetActive(true);
         StartCoroutine(blinkObject(1f, transform.Find("Bridge").gameObject));
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(1.5f);
         myObstacle.SetActive(false);
         Debug.Log("Bridge up!");
 

@@ -5,43 +5,73 @@ using UnityEngine;
 
 public class PlayerSelectArrows : MonoBehaviour
 {
-    public GameObject ArrowPrefab;
-    public List<Player> players = new List<Player>();
-    public Character character;   //jock, nerd, princess or hipster
-    // Start is called before the first frame update
+    public Player player;
+    public Character character;
+
+    public List<Sprite> sprites;
+    public List<GameObject> team;
+    private bool nextPlayer;
+    private bool prevPlayer;
+    private bool switchTeam;
+
     void Start()
     {
-        
+        foreach (Transform t in transform)
+        {
+            if (t.gameObject.name.StartsWith("team"))
+            {
+                t.gameObject.SetActive(false);
+                team.Add(t.gameObject);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (player.inputType == "")
+        {
+            return;
+        }
+        float moveHorizontal = Input.GetAxisRaw(player.inputName() + "Horizontal");
+        float moveVertical = Input.GetAxisRaw(player.inputName() + "Vertical");
+        if (moveVertical > .7 && !nextPlayer)
+        {
+            nextPlayer = true;
+            player.character = Player.nextCharacter(player.character);
+            setPlayer(player);
+        }
+        if (moveVertical < -.7 && !prevPlayer)
+        {
+            prevPlayer = true;
+            player.character = Player.prevCharacter(player.character);
+            setPlayer(player);
+        }
+        if (moveVertical < .2 && moveVertical > -.2)
+        {
+            prevPlayer = nextPlayer = false;
+        }
+        if ((moveHorizontal > .7 || moveHorizontal < -.7) && !switchTeam)
+        {
+            switchTeam = true;
+            player.team = (player.team + 1) % 2;
+            setPlayer(player);
+        }
+        if (moveHorizontal < .2 && moveHorizontal > -.2)
+        {
+            switchTeam = false;
+        }
     }
 
-    void updateArrows()
-    {
-        foreach(Transform t in transform)
-        {
-            if (t.gameObject.name.StartsWith("arrow"))
-            {
-                Destroy(t.gameObject);
-            }
-        }
-        for (int i = 0; i < players.Count; i++)
-        {
-            GameObject ArrowInst = Instantiate(ArrowPrefab, transform, false);
-            ArrowInst.transform.localPosition = new Vector3(-1.5f + i, 0);
-            ArrowInst.name = players[i].inputName();
-            ArrowInst.GetComponent<SpriteRenderer>().color = players[i].color;
-        }
-        
-    }
 
-    internal void addPlayer(Player player)
+    public void setPlayer(Player player)
     {
-        players.Add(player);
-        updateArrows();
+        this.player = player;
+        foreach (GameObject go in team)
+        {
+           go.SetActive(false);
+        }
+        team[player.team].SetActive(true);
+        GetComponentInChildren<SpriteRenderer>().sprite = sprites[player.characterNumber()];
     }
 }

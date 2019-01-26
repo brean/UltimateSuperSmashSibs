@@ -147,7 +147,7 @@ public class InputControl : MonoBehaviour
 
     public void speedPlayerUp(float speedIncrease, float duration) {
         speed += speedIncrease;
-        speedPlayerBackDown(duration);
+        StartCoroutine(speedPlayerBackDown(duration));
 
     }
 
