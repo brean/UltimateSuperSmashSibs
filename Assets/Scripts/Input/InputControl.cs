@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class InputControl : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class InputControl : MonoBehaviour
 	public Sprite leftright;
 	private Vector3 initialScale;
 
+    public float backwardsTimer = 0f;
+    public LimitedQueue<Vector2> movementHistory = new LimitedQueue<Vector2>(130);
+    public Queue<Vector2> revQueue = new Queue<Vector2>();
     //ability stuff
     public GameObject SmokeyPrefab;
     private float abilityCooldown = 5;
@@ -59,8 +63,12 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (snatchedTimer > 0f)
+        if( backwardsTimer > 0f && revQueue.Count > 0)
+        {
+            backwardsTimer -= 1;
+            rb2d.position = revQueue.Dequeue();
+        }
+        else if (snatchedTimer > 0f)
         {
             snatchedTimer -= Time.deltaTime;
             rb2d.position = snatchedBy.transform.position;
@@ -97,8 +105,9 @@ public class InputControl : MonoBehaviour
 		
 		Flip(moveHorizontal);
 		FrontBack(moveVertical);
-
+        movementHistory.Enqueue(newpos);
         rb2d.MovePosition(newpos);
+
     }
 	
 	private void Flip (float moveHorizontal)
@@ -191,6 +200,15 @@ public class InputControl : MonoBehaviour
                         smokey.transform.position = rb2d.position;
                         break;
                     case "Player4": //Nerd
+                        GameObject[] players3 = GameObject.FindGameObjectsWithTag("Player");
+
+                        foreach (GameObject player in players3)
+                        {
+                            player.GetComponent<InputControl>().backwardsTimer = 130f;
+                            player.GetComponent<InputControl>().revQueue = player.GetComponent<InputControl>().movementHistory.revQueue();
+
+                        }
+
                         break;
                     default: break;
                 }
@@ -203,4 +221,65 @@ public class InputControl : MonoBehaviour
             abilityCooldown -= Time.deltaTime;
         }
     }
+}
+
+
+/// <summary>
+/// Represents a limited set of first-in, first-out objects.
+/// </summary>
+/// <typeparam name="T">The type of each object to store.</typeparam>
+public class LimitedQueue<T> : Queue<T>
+{
+    /// <summary>
+    /// Stores the local limit instance.
+    /// </summary>
+    private int limit = -1;
+
+    /// <summary>
+    /// Sets the limit of this LimitedQueue. If the new limit is greater than the count of items in the queue, the queue will be trimmed.
+    /// </summary>
+    public int Limit
+    {
+        get
+        {
+            return limit;
+        }
+        set
+        {
+            limit = value;
+            while (Count > limit)
+            {
+                Dequeue();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the LimitedQueue class.
+    /// </summary>
+    /// <param name="limit">The maximum number of items to store.</param>
+    public LimitedQueue(int limit)
+        : base(limit)
+    {
+        this.Limit = limit;
+    }
+
+    /// <summary>
+    /// Adds a new item to the queue. After adding the item, if the count of items is greater than the limit, the first item in the queue is removed.
+    /// </summary>
+    /// <param name="item">The item to add.</param>
+    public new void Enqueue(T item)
+    {
+        while (Count >= limit)
+        {
+            Dequeue();
+        }
+        base.Enqueue(item);
+    }
+
+    public Queue<T> revQueue()
+    {
+        return new Queue<T>(base.ToArray().Reverse());
+    }
+
 }
