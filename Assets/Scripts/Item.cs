@@ -16,7 +16,7 @@ public class Item : MonoBehaviour
                 if (other.gameObject.CompareTag("Player"))
                 {
                     player = other.gameObject;
-                    player.GetComponent<InputControl>().speed += 0.2f;
+                    player.GetComponent<InputControl>().speedPlayerUp(0.2f, 2f);
                     this.gameObject.SetActive(false);
                 }
                 break;

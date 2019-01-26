@@ -9,6 +9,7 @@ public class InputControl : MonoBehaviour
 
     [Tooltip("speed of the player")]
     public float speed = .01f;
+    float startingSpeed;
 
     [Tooltip("invert a stoned player")]
     public float invertedTimer = 0f;
@@ -31,6 +32,8 @@ public class InputControl : MonoBehaviour
 		
 		GetComponent<SpriteRenderer>().sprite = front;
 		initialScale = transform.localScale;
+
+        startingSpeed = speed;
     }
 
     // Update is called once per frame
@@ -96,4 +99,15 @@ public class InputControl : MonoBehaviour
 			transform.localScale = initialScale;
 		}
 	}
+
+    public void speedPlayerUp(float speedIncrease, float duration) {
+        speed += speedIncrease;
+        speedPlayerBackDown(duration);
+
+    }
+
+    IEnumerator speedPlayerBackDown(float duration) {
+        yield return new WaitForSeconds(duration);
+        speed = startingSpeed;
+    }
 }

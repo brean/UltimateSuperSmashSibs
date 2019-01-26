@@ -9,15 +9,18 @@ public class Button : MonoBehaviour
 
     public Sprite deactivatedSprite;
 
-    [Range(1,2)] // 1 = Good, 2 = Evil
+    [Range(1, 2)] // 1 = Good, 2 = Evil
     public int buttonType;
 
-    private void Start(){
+    private void Start()
+    {
 
-        switch (buttonType){
+        switch (buttonType)
+        {
             //if GOOD BUTTON (removes obstacle, potentially adds support)
             case 1:
-                if (transform.childCount == 2){ 
+                if (transform.childCount == 2)
+                {
                     mySupport = this.gameObject.transform.GetChild(0).gameObject;
                     myObstacle = this.gameObject.transform.GetChild(1).gameObject;
                 }
@@ -33,11 +36,14 @@ public class Button : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other)
+    {
 
-        switch (buttonType){
+        switch (buttonType)
+        {
             case 1:
-                if (other.gameObject.CompareTag("Player")){
+                if (other.gameObject.CompareTag("Player"))
+                {
                     myObstacle.SetActive(false);
                     mySupport.SetActive(true);
                     this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
@@ -45,13 +51,20 @@ public class Button : MonoBehaviour
                 }
                 break;
             case 2:
-                if (other.gameObject.CompareTag("Player")){
-                    myObstacle.SetActive(true);
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    putUpTheFences();
                     Debug.Log("Bad Button activated!");
                 }
                 break;
         }
     }
 
+    IEnumerator putUpTheFences()
+    {
+        myObstacle.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        myObstacle.SetActive(false);
+    }
 
 }
