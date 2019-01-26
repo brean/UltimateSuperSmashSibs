@@ -13,13 +13,13 @@ public class Player : MonoBehaviour
     public int number; // number of input (1-4)
 
     [SerializeField]
-    public string character;
+    public Character character; //jock, nerd, princess or hipster
 
     [SerializeField]
     public Color color;
 
     public string inputName()
     {
-        return inputType + number;
+        return "Player" + number + inputType;
     }
 }

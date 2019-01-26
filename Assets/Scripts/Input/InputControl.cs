@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
-    [Tooltip("Number of the joystick")]
-    public string inputName;
+    private Player player;
+
+    [Tooltip("type of the character (jock, nerd, princess or hipster)")]
+    public Character character;
 
     [Tooltip("speed of the player")]
     public float speed = .01f;
@@ -28,10 +30,11 @@ public class InputControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerSelectManager playerSelectManager = FindObjectOfType<PlayerSelectManager>();
+        player = playerSelectManager.getPlayerForCharacter(character);
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
-        inputName = this.gameObject.name;
-        Debug.Log("inputname: " + inputName);
+        Debug.Log("inputname: " + player.inputName());
 		
 		GetComponent<SpriteRenderer>().sprite = front;
 		initialScale = transform.localScale;
@@ -40,11 +43,10 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePlayer(inputName + "Joy");
-        movePlayer(inputName + "Key");
+
+        movePlayer(player.inputName());
 
         updateAbility();
-        
     }
 
     void movePlayer(string input) {
