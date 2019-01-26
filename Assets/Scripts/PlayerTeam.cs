@@ -11,7 +11,7 @@ public class PlayerTeam : MonoBehaviour
     {
         teamnr = nr;
         Color col = colors[nr];
-        GameObject.Find("Top").GetComponent<SpriteRenderer>().color = new Color(col.r, col.g, col.b);
+        GetChildren.findByName(gameObject, "Top").GetComponent<SpriteRenderer>().color = new Color(col.r, col.g, col.b);
     }
 
     // Update is called once per frame

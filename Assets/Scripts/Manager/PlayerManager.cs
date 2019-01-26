@@ -23,6 +23,10 @@ public class PlayerManager : MonoBehaviour
             return;
         }
         GameObject NextPlayer = Instantiate(PlayerPrefab);
+        NextPlayer.transform.position = new Vector3(
+            Camera.main.transform.position.x,
+            Camera.main.transform.position.y,
+            -.2f);
         NextPlayer.GetComponent<InputControl>().inputName = inputName;
         NextPlayer.GetComponent<PlayerTeam>().SetTeam(Player.Count % 2);
         // TODO: team = Player.Count % 2
@@ -47,8 +51,8 @@ public class PlayerManager : MonoBehaviour
         }
         for (int i = 0; i < 4; i++)
         {
-            if (Input.GetAxis("Joy" + i + "Horizontal") > .2 ||
-                Input.GetAxis("Joy" + i + "Horizontal") > .2)
+            if (Input.GetAxis("Joy" + i + "Horizontal") > .1 ||
+                Input.GetAxis("Joy" + i + "Horizontal") > .1)
             {
                 CreatePlayer("Joy" + i);
             }
