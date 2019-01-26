@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2606683016771451268}
   - component: {fileID: 2606683016771451269}
+  - component: {fileID: 8572035580908322130}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2606683016771451271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 19.96, y: -19.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2606683016823520831}
@@ -79,6 +80,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8572035580908322130
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606683016771451271}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 3}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 4}
+  m_EdgeRadius: 0
 --- !u!1 &3550439216407583784
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 3550439216407583784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.47, y: 33.5, z: 0.064597726}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3550439217744323272}
   - {fileID: 2606683016771451268}
@@ -126,8 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7a188b5bb044cbab2d9a74fd64a378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myObstacle: {fileID: 0}
+  myObstacle: {fileID: 2606683016771451271}
   mySupport: {fileID: 3550439217744323274}
+  deactivatedSprite: {fileID: 21300000, guid: 358b92ae1c5234f11b3b6e635445b1ed, type: 3}
   buttonType: 1
 --- !u!212 &3550439216407583790
 SpriteRenderer:
@@ -166,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300162, guid: 7ef643e09c4924920a79d75b5aa5359a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35f68591f4e6d4c1abad31be6976f0fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -194,7 +222,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.2, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -228,7 +256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3550439217744323274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 19.969997, y: -19.09, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 2606683016823520831}
