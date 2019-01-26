@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14094,6 +14094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputName: WasdKeys
   speed: 0.1
+  invertedTimer: 0
 --- !u!50 &562251200
 Rigidbody2D:
   serializedVersion: 4
@@ -30147,6 +30148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputName: ArrowKeys
   speed: 0.1
+  invertedTimer: 0
 --- !u!50 &1076038830
 Rigidbody2D:
   serializedVersion: 4
@@ -30470,7 +30472,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.92}
+    oldSize: {x: 2.56, y: 3.84}
     newSize: {x: 0.32, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -30493,6 +30495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputName: ArrowKeys
   speed: 0.1
+  invertedTimer: 0
 --- !u!50 &1393089323
 Rigidbody2D:
   serializedVersion: 4
@@ -30666,7 +30669,7 @@ Transform:
   m_GameObject: {fileID: 1403590976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.04, y: 16.92, z: -0.011313502}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -30731,6 +30734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputName: ArrowKeys
   speed: 0.1
+  invertedTimer: 0
 --- !u!50 &1540783319
 Rigidbody2D:
   serializedVersion: 4
@@ -30831,7 +30835,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.92}
+    oldSize: {x: 2.56, y: 3.84}
     newSize: {x: 0.32, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
