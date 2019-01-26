@@ -21,9 +21,29 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("ArrowKeysHorizontal");
-        float moveVertical = Input.GetAxis("ArrowKeysVertical");
+        float moveHorizontal = Input.GetAxis(inputName + "Horizontal");
+        float moveVertical = -Input.GetAxis(inputName + "Vertical");
+
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.MovePosition(rb2d.position + (movement * speed));
+        Vector2 newpos = rb2d.position + (movement * speed);
+
+
+        Camera cam = Camera.main;
+        float halfCamWidth = ((2f * cam.orthographicSize) * cam.aspect) / 2f;
+        float mapBorderOffset = 1f;
+
+        float maxPosX = (cam.gameObject.transform.position.x + halfCamWidth) - mapBorderOffset;
+        float minPosX = (cam.gameObject.transform.position.x - halfCamWidth) + mapBorderOffset;
+
+        print(cam.gameObject.transform.position.x + " || " + halfCamWidth);
+
+        if (newpos.x > maxPosX || newpos.x < minPosX)
+        {
+            newpos.x = rb2d.position.x;
+        }
+
+        rb2d.MovePosition(newpos);
+
+
     }
 }
