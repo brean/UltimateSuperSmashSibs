@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
+	public Player player;
+
+    [Tooltip("character for input control")]
+    public Character character;
+
     [Tooltip("Number of the joystick")]
     public string inputName;
 
@@ -25,6 +30,8 @@ public class InputControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		PlayerSelectManager playerSelectManager = FindObjectOfType<PlayerSelectManager>();
+        player = playerSelectManager.getPlayerForCharacter(character);
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
         inputName = this.gameObject.name;
