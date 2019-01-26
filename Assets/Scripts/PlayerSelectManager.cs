@@ -72,7 +72,7 @@ public class PlayerSelectManager : MonoBehaviour
 
     public void assignPlayerToCharacter(int number, Player player)
     {
-        characterSelect[number].GetComponent<PlayerSelectArrows>().setPlayer(player);
+        characterSelect[number].GetComponent<PlayerCharacterSelection>().setPlayer(player);
     }
 
     // Update is called once per frame

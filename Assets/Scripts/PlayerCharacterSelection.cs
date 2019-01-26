@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSelectArrows : MonoBehaviour
+public class PlayerCharacterSelection : MonoBehaviour
 {
     public Player player;
     public Character character;
