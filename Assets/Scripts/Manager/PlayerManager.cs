@@ -59,7 +59,7 @@ public class PlayerManager : MonoBehaviour
             return;
         }
         GameObject NextPlayer = Instantiate(PlayerPrefab);
-        NextPlayer.GetComponent<InputControl>().inputName = inputName;
+        // NextPlayer.GetComponent<InputControl>().inputName = inputName;
         NextPlayer.GetComponent<PlayerTeam>().SetTeam(PlayerDict.Count % 2);
         // TODO: team = Player.Count % 2
         PlayerDict.Add(inputName, NextPlayer);
