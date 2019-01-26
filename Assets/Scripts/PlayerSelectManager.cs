@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerSelectManager : MonoBehaviour
 {
     public static PlayerSelectManager instance;
-    public List<GameObject> characters = new List<GameObject>();
+    public List<GameObject> characterSelect = new List<GameObject>();
     [SerializeField]
     public List<Player> players = new List<Player>();
     public Color[] colors = new Color[]{ Color.red, Color.blue, Color.green, Color.yellow };
@@ -27,7 +27,7 @@ public class PlayerSelectManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             GameObject charPrefab = GameObject.Find("Character" + (i + 1) + "SelectPrefab");
-            characters.Add(charPrefab);
+            characterSelect.Add(charPrefab);
         }
     }
 
@@ -60,7 +60,7 @@ public class PlayerSelectManager : MonoBehaviour
             p.inputType = inputType;
             p.number = number;
             p.color = colors[players.Count];
-            assignPlayerToCharacter(remainingCharacter[0], p);
+            assignPlayerToCharacter(players.Count, p);
             remainingCharacter.RemoveAt(0);
             players.Add(p);
             if (players.Count == 4)
@@ -71,16 +71,9 @@ public class PlayerSelectManager : MonoBehaviour
         }
     }
 
-    public void assignPlayerToCharacter(Character character, Player player)
+    public void assignPlayerToCharacter(int number, Player player)
     {
-        foreach (GameObject go in characters)
-        {
-            if (go.GetComponent<PlayerSelectArrows>().character == character)
-            {
-                go.GetComponent<PlayerSelectArrows>().addPlayer(player);
-                player.character = character;
-            }
-        }
+        characterSelect[number].GetComponent<PlayerSelectArrows>().setPlayer(player);
     }
 
     // Update is called once per frame
@@ -89,7 +82,7 @@ public class PlayerSelectManager : MonoBehaviour
         // new player can only until we have 4 players
         if (players.Count < 4)
         {
-            for (int i = 0; i < characters.Count; i++)
+            for (int i = 0; i < characterSelect.Count; i++)
             {
                 checkAddPlayer(i + 1, "Joy");
                 checkAddPlayer(i + 1, "Key");
