@@ -10,6 +10,9 @@ public class InputControl : MonoBehaviour
     [Tooltip("speed of the player")]
     public float speed = .01f;
 
+    [Tooltip("invert a stoned player")]
+    public bool inverted = false;
+
     private Rigidbody2D rb2d;
 
     // Start is called before the first frame update
@@ -30,6 +33,11 @@ public class InputControl : MonoBehaviour
     void movePlayer(string input) {
         float moveHorizontal = Input.GetAxis(input + "Horizontal");
         float moveVertical = -Input.GetAxis(input + "Vertical");
+        if (inverted)
+        {
+            moveHorizontal = -moveHorizontal;
+            moveVertical = -moveVertical;
+        }
         Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
         if (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical) < .1) {
             return;

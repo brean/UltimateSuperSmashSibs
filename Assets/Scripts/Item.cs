@@ -6,7 +6,7 @@ public class Item : MonoBehaviour
 {
     public GameObject player;
 
-    [Range(1,2)]
+    [Range(1,3)]
     public int itemType;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +22,15 @@ public class Item : MonoBehaviour
                 break;
             case 2:
                 //TODO
+                break;
+            case 3:
+                //Cloud smoke, to invert stuff
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    player = other.gameObject;
+                    player.GetComponent<InputControl>().inverted = true;
+                    this.gameObject.SetActive(false);
+                }
                 break;
         }
     }
