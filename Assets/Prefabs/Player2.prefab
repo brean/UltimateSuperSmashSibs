@@ -118,6 +118,9 @@ MonoBehaviour:
   inputName: 
   speed: 0.2
   invertedTimer: 0
+  front: {fileID: 21300000, guid: 76088765f4d624db1be6ab2b3afebf7f, type: 3}
+  back: {fileID: 21300000, guid: 76088765f4d624db1be6ab2b3afebf7f, type: 3}
+  leftright: {fileID: 21300000, guid: abe1384da25580348a390070173f6c0f, type: 3}
 --- !u!58 &234840160
 CircleCollider2D:
   m_ObjectHideFlags: 0
