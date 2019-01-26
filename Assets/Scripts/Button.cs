@@ -15,8 +15,9 @@ public class Button : MonoBehaviour
         switch (buttonType){
             //if GOOD BUTTON (removes obstacle, potentially adds support)
             case 1:
-                if (transform.childCount > 0){ 
-                    mySupport = this.gameObject.transform.GetChild(0).gameObject; 
+                if (transform.childCount == 2){ 
+                    mySupport = this.gameObject.transform.GetChild(0).gameObject;
+                    myObstacle = this.gameObject.transform.GetChild(1).gameObject;
                 }
                 myObstacle.SetActive(true);
                 mySupport.SetActive(false);

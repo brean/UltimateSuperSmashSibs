@@ -13,6 +13,7 @@ public class Win : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log(other.gameObject.name + " from team " + "???" + " won!");
             winningPlayer = other.gameObject;
             //TODO: winningTeam = winningPlayer.team;
             //TODO: go to win screen

@@ -6,12 +6,23 @@ public class Item : MonoBehaviour
 {
     public GameObject player;
 
+    [Range(1,2)]
+    public int itemType;
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = other.gameObject;
-            player.GetComponent<InputControl>().speed += 0.1f;
+        switch (itemType){
+            case 1:
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    player = other.gameObject;
+                    player.GetComponent<InputControl>().speed += 0.1f;
+                    this.gameObject.SetActive(false);
+                }
+                break;
+            case 2:
+                //TODO
+                break;
         }
     }
 }
