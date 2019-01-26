@@ -7,20 +7,45 @@ public class Button : MonoBehaviour
     public GameObject myObstacle;
     public GameObject mySupport;
 
-    private void Start()
-    {
-        //mySupport = this.transform.Find("Support").gameObject;
-        myObstacle.SetActive(true);
-        mySupport.SetActive(false);
+    [Range(1,2)] // 1 = Good, 2 = Evil
+    public int buttonType;
+
+    private void Start(){
+
+        switch (buttonType){
+            //if GOOD BUTTON (removes obstacle, potentially adds support)
+            case 1:
+                if (transform.childCount > 0){ 
+                    mySupport = this.gameObject.transform.GetChild(0).gameObject; 
+                }
+                myObstacle.SetActive(true);
+                mySupport.SetActive(false);
+                break;
+
+            //if BAD BUTTON (adds obstacle)
+            case 2:
+                myObstacle = this.gameObject.transform.GetChild(0).gameObject;
+                myObstacle.SetActive(false);
+                break;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            myObstacle.SetActive(false);
-            mySupport.SetActive(true);
-            Debug.Log("Button activated!");
+    void OnTriggerEnter2D(Collider2D other){
+
+        switch (buttonType){
+            case 1:
+                if (other.gameObject.CompareTag("Player")){
+                    myObstacle.SetActive(false);
+                    mySupport.SetActive(true);
+                    Debug.Log("Good Button activated!");
+                }
+                break;
+            case 2:
+                if (other.gameObject.CompareTag("Player")){
+                    myObstacle.SetActive(true);
+                    Debug.Log("Bad Button activated!");
+                }
+                break;
         }
     }
 }
