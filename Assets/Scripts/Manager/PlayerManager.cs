@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 /**
- * Adds new Player when a joystick gets connected or a key is pressed
- */
+* Adds new Player when a joystick gets connected or a key is pressed
+*/
 
 public class PlayerManager : MonoBehaviour
 {
@@ -96,7 +97,15 @@ public class PlayerManager : MonoBehaviour
 
             foreach (GameObject entry in PlayerDict.Values)
             {
-                xess.Add(entry.transform.position.x);
+                try
+                {
+                    xess.Add(entry.transform.position.x);
+                }
+                catch (NullReferenceException e)
+                {
+                    //mmmhh, guter code ...
+                }
+
             }
 
             if (xess.Count != 0)
