@@ -16,17 +16,15 @@ public class InputControl : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        inputName = this.gameObject.name;
+        Debug.Log("inputname: " + inputName);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis(inputName + "Horizontal");
-        float moveVertical = -Input.GetAxis(inputName + "Vertical");
-
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        Vector2 newpos = rb2d.position + (movement * speed);
-
+        movePlayer(inputName + "Joy");
+        movePlayer(inputName + "Key");
 
         Camera cam = Camera.main;
         float halfCamWidth = ((2f * cam.orthographicSize) * cam.aspect) / 2f;
@@ -45,5 +43,14 @@ public class InputControl : MonoBehaviour
         rb2d.MovePosition(newpos);
 
 
+    }
+
+    void movePlayer(string input) {
+        float moveHorizontal = Input.GetAxis(input + "Vertical");
+        float moveVertical = -Input.GetAxis(input + "Vertical");
+        Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
+
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        Vector2 newpos = rb2d.position + (movement * speed);
     }
 }
