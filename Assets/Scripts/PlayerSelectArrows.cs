@@ -9,7 +9,8 @@ public class PlayerSelectArrows : MonoBehaviour
     public Character character;
 
     public List<Sprite> sprites;
-    public List<GameObject> team;
+    private List<GameObject> team = new List<GameObject>();
+    private GameObject check;
     private bool nextPlayer;
     private bool prevPlayer;
     private bool switchTeam;
@@ -23,14 +24,28 @@ public class PlayerSelectArrows : MonoBehaviour
                 t.gameObject.SetActive(false);
                 team.Add(t.gameObject);
             }
+            if (t.gameObject.name == "check")
+            {
+                t.gameObject.SetActive(false);
+                check = t.gameObject;
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.inputType == "")
+        if (!player.active)
         {
+            return;
+        }
+        if (Input.GetKeyUp(player.inputButton())) {
+            player.ready = !player.ready;
+            setPlayer(player);
+        }
+        if (player.ready)
+        {
+            // player is already ready, he should not be able to change the other stuff again!
             return;
         }
         float moveHorizontal = Input.GetAxisRaw(player.inputName() + "Horizontal");
@@ -61,6 +76,7 @@ public class PlayerSelectArrows : MonoBehaviour
         {
             switchTeam = false;
         }
+
     }
 
 
@@ -72,6 +88,9 @@ public class PlayerSelectArrows : MonoBehaviour
            go.SetActive(false);
         }
         team[player.team].SetActive(true);
+        check.SetActive(player.ready);
         GetComponentInChildren<SpriteRenderer>().sprite = sprites[player.characterNumber()];
+
+        PlayerSelectManager.instance.checkReady();
     }
 }
