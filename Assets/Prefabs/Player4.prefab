@@ -120,7 +120,7 @@ MonoBehaviour:
   invertedTimer: 0
   front: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1, type: 3}
   back: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1, type: 3}
-  leftright: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1, type: 3}
+  leftright: {fileID: 21300000, guid: 5a6d70ded9e1e4315b9a047b8d6c2dd6, type: 3}
 --- !u!58 &409923971
 CircleCollider2D:
   m_ObjectHideFlags: 0
