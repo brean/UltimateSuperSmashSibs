@@ -52,7 +52,7 @@ public class InputControl : MonoBehaviour
             moveHorizontal = -moveHorizontal;
             moveVertical = -moveVertical;
         }
-        Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
+        //Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
         if (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical) < .1) {
             return;
         }
@@ -102,7 +102,7 @@ public class InputControl : MonoBehaviour
 
     public void speedPlayerUp(float speedIncrease, float duration) {
         speed += speedIncrease;
-        speedPlayerBackDown(duration);
+        StartCoroutine(speedPlayerBackDown(duration));
 
     }
 
