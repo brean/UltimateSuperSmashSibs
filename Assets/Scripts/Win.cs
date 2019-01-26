@@ -15,6 +15,7 @@ public class Win : MonoBehaviour
         {
             winningPlayer = other.gameObject;
             //TODO: winningTeam = winningPlayer.team;
+            //TODO: go to win screen
         }
     }
 }
