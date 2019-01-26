@@ -21,7 +21,14 @@ public class Item : MonoBehaviour
                 }
                 break;
             case 2:
-                //TODO
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    player = other.gameObject;
+                    Debug.Log("Warpfeld activated!");
+                    // TODO:
+                    // teamMember = player.getTeamMember();
+                    // teamMember.transform.position = new Vector2(x, y);
+                }
                 break;
             case 3:
                 //Cloud smoke, to invert stuff

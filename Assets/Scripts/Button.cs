@@ -51,6 +51,7 @@ public class Button : MonoBehaviour
             case 1:
                 if (other.gameObject.CompareTag("Player") && buttonActive)
                 {
+                    //TODO: Play sound
                     StartCoroutine(putUpTheBridge());
                     buttonActive = false;
                     this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
