@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Player
+public class Player : MonoBehaviour
 {
     [SerializeField]
     public string inputType; // key or joy
