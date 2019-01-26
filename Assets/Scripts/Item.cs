@@ -28,10 +28,16 @@ public class Item : MonoBehaviour
                 if (other.gameObject.CompareTag("Player"))
                 {
                     player = other.gameObject;
-                    player.GetComponent<InputControl>().inverted = true;
+                    player.GetComponent<InputControl>().invertedTimer = 10f;
                     this.gameObject.SetActive(false);
                 }
                 break;
         }
     }
+
+    void OnTriggerEnter2D()
+    {
+
+    }
+    
 }

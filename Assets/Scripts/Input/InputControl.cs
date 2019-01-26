@@ -11,7 +11,7 @@ public class InputControl : MonoBehaviour
     public float speed = .01f;
 
     [Tooltip("invert a stoned player")]
-    public bool inverted = false;
+    public float invertedTimer = 0f;
 
     private Rigidbody2D rb2d;
 
@@ -33,8 +33,9 @@ public class InputControl : MonoBehaviour
     void movePlayer(string input) {
         float moveHorizontal = Input.GetAxis(input + "Horizontal");
         float moveVertical = -Input.GetAxis(input + "Vertical");
-        if (inverted)
+        if (invertedTimer > 0f)
         {
+            invertedTimer -= Time.deltaTime;
             moveHorizontal = -moveHorizontal;
             moveVertical = -moveVertical;
         }
