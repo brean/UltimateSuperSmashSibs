@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16196,6 +16196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myObstacle: {fileID: 0}
   mySupport: {fileID: 1542902666707559240}
+  activatedSprite: {fileID: 0}
   deactivatedSprite: {fileID: 0}
   buttonType: 1
 --- !u!1 &1542902666707559240
@@ -16352,6 +16353,12 @@ PrefabInstance:
       propertyPath: character
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2168787672685650613, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: SmokeyPrefab
+      value: 
+      objectReference: {fileID: 7914337133693660626, guid: 1b30617b81f24c049be03e071c650c4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90e5b74abefb04557978b0a11ac7d00d, type: 3}
 --- !u!1001 &2186171329681473032
@@ -16426,6 +16433,12 @@ PrefabInstance:
       propertyPath: character
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2186171328857400771, guid: 99e03d93e20a34c8eaf1ecdc9ab17007,
+        type: 3}
+      propertyPath: SmokeyPrefab
+      value: 
+      objectReference: {fileID: 7914337133693660626, guid: 1b30617b81f24c049be03e071c650c4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99e03d93e20a34c8eaf1ecdc9ab17007, type: 3}
 --- !u!1001 &2606683017134948738
@@ -16589,6 +16602,12 @@ PrefabInstance:
       propertyPath: character
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5685569052896744098, guid: 7854cd345da30441ea99552a465b64b1,
+        type: 3}
+      propertyPath: SmokeyPrefab
+      value: 
+      objectReference: {fileID: 7914337133693660626, guid: 1b30617b81f24c049be03e071c650c4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7854cd345da30441ea99552a465b64b1, type: 3}
 --- !u!1001 &5968541393716814224
@@ -16658,5 +16677,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5968541392816469334, guid: bb51ef53145eb42e3bd89df87df9a120,
+        type: 3}
+      propertyPath: SmokeyPrefab
+      value: 
+      objectReference: {fileID: 7914337133693660626, guid: 1b30617b81f24c049be03e071c650c4b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb51ef53145eb42e3bd89df87df9a120, type: 3}
