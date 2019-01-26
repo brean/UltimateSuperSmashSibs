@@ -18,7 +18,7 @@ public class InputControl : MonoBehaviour
 	private bool facingRight;
 	public Sprite front;
 	public Sprite back;
-	private Sprite leftright;
+	public Sprite leftright;
 	private Vector3 initialScale;
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class InputControl : MonoBehaviour
         inputName = this.gameObject.name;
         Debug.Log("inputname: " + inputName);
 		
-		leftright = GetComponent<SpriteRenderer>().sprite;
+		GetComponent<SpriteRenderer>().sprite = front;
 		initialScale = transform.localScale;
     }
 
