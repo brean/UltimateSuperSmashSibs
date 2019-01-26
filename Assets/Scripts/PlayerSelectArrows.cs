@@ -7,7 +7,7 @@ public class PlayerSelectArrows : MonoBehaviour
 {
     public GameObject ArrowPrefab;
     public List<Player> players = new List<Player>();
-    public string characterName;   //jock, nerd, princess, hipster
+    public Character character;   //jock, nerd, princess or hipster
     // Start is called before the first frame update
     void Start()
     {

@@ -303,7 +303,7 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  remainingPlayerNames: []
+  remainingPlayer: 00000000030000000100000002000000
 --- !u!4 &965199824
 Transform:
   m_ObjectHideFlags: 0
@@ -402,6 +402,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5684874213256164929, guid: dddfadda15d6cda4f9f75c0a2f08ea1e,
         type: 3}
+    - target: {fileID: 5927257876546621862, guid: c6e72fd271c8f6f498c4478364682c3d,
+        type: 3}
+      propertyPath: character
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e72fd271c8f6f498c4478364682c3d, type: 3}
 --- !u!1001 &1298622061
@@ -488,6 +493,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5684874213256164929, guid: dddfadda15d6cda4f9f75c0a2f08ea1e,
         type: 3}
+    - target: {fileID: 5927257876546621862, guid: c6e72fd271c8f6f498c4478364682c3d,
+        type: 3}
+      propertyPath: character
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e72fd271c8f6f498c4478364682c3d, type: 3}
 --- !u!1 &1606588369
@@ -650,5 +660,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5684874213256164929, guid: dddfadda15d6cda4f9f75c0a2f08ea1e,
         type: 3}
+    - target: {fileID: 5927257876546621862, guid: c6e72fd271c8f6f498c4478364682c3d,
+        type: 3}
+      propertyPath: character
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e72fd271c8f6f498c4478364682c3d, type: 3}
