@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14092,7 +14092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: 
+  inputName: WasdKeys
   speed: 0.1
 --- !u!50 &562251200
 Rigidbody2D:
@@ -14177,6 +14177,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &715107339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715107340}
+  - component: {fileID: 715107341}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &715107340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715107339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3490751, y: 0.34477952, z: 2.0966797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715107341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715107339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451b8dc727314c2488d3cef75b3f90b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 3641914588741577943, guid: e9844029c2e2132459ae69f6260b2085,
+    type: 3}
+  xPlayerMax: 0
+  xPlayerMin: 0
+  camHalfWidth: 0
 --- !u!1 &794969098
 GameObject:
   m_ObjectHideFlags: 0
@@ -30096,7 +30144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: 
+  inputName: ArrowKeys
   speed: 0.1
 --- !u!50 &1076038830
 Rigidbody2D:
@@ -30353,8 +30401,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 88.96978
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 9.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -30378,7 +30426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359823058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.87, y: 10.3, z: -10}
+  m_LocalPosition: {x: 14.5, y: 9.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30442,7 +30490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: 
+  inputName: ArrowKeys
   speed: 0.1
 --- !u!50 &1393089323
 Rigidbody2D:
@@ -30679,7 +30727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: 
+  inputName: ArrowKeys
   speed: 0.1
 --- !u!50 &1540783319
 Rigidbody2D:
