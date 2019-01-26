@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class InputControl : MonoBehaviour
 {
+	public Player player;
+
+    [Tooltip("character for input control")]
+    public Character character;
+
     [Tooltip("Number of the joystick")]
     public string inputName;
 
@@ -25,6 +30,11 @@ public class InputControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		PlayerSelectManager playerSelectManager = FindObjectOfType<PlayerSelectManager>();
+        if (playerSelectManager != null) {
+            player = playerSelectManager.getPlayerForCharacter(character);
+        }
+        
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
         inputName = this.gameObject.name;
@@ -52,7 +62,7 @@ public class InputControl : MonoBehaviour
             moveHorizontal = -moveHorizontal;
             moveVertical = -moveVertical;
         }
-        //Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
+        Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
         if (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical) < .1) {
             return;
         }
@@ -102,7 +112,7 @@ public class InputControl : MonoBehaviour
 
     public void speedPlayerUp(float speedIncrease, float duration) {
         speed += speedIncrease;
-        StartCoroutine(speedPlayerBackDown(duration));
+        speedPlayerBackDown(duration);
 
     }
 

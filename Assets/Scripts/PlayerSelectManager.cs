@@ -12,7 +12,7 @@ public class PlayerSelectManager : MonoBehaviour
     public List<Player> players = new List<Player>();
     public Color[] colors = new Color[]{ Color.red, Color.blue, Color.green, Color.yellow };
 
-    public List<Character> remainingPlayer = new List<Character>(new[] { Character.jock, Character.hipster, Character.nerd, Character.princess });
+    public List<Character> remainingCharacter = new List<Character>(new[] { Character.jock, Character.hipster, Character.nerd, Character.princess });
 
     private void Awake()
     {
@@ -60,8 +60,8 @@ public class PlayerSelectManager : MonoBehaviour
             p.inputType = inputType;
             p.number = number;
             p.color = colors[players.Count];
-            assignPlayerToCharacter(remainingPlayer[0], p);
-            remainingPlayer.RemoveAt(0);
+            assignPlayerToCharacter(remainingCharacter[0], p);
+            remainingCharacter.RemoveAt(0);
             players.Add(p);
             if (players.Count == 4)
             {
