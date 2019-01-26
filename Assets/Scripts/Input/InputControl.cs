@@ -14,13 +14,23 @@ public class InputControl : MonoBehaviour
     public float invertedTimer = 0f;
 
     private Rigidbody2D rb2d;
+	
+	private bool facingRight;
+	public Sprite front;
+	public Sprite back;
+	private Sprite leftright;
+	private Vector3 initialScale;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        facingRight = true;
+		rb2d = GetComponent<Rigidbody2D>();
         inputName = this.gameObject.name;
         Debug.Log("inputname: " + inputName);
+		
+		leftright = GetComponent<SpriteRenderer>().sprite;
+		initialScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -45,7 +55,43 @@ public class InputControl : MonoBehaviour
         }
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         Vector2 newpos = rb2d.position + (movement * speed);
+		
+		Flip(moveHorizontal);
+		FrontBack(moveVertical);
 
         rb2d.MovePosition(newpos);
     }
+	
+	private void Flip (float moveHorizontal)
+	{
+		if (moveHorizontal > 0.1 || moveHorizontal < -0.1 )
+		{
+			GetComponent<SpriteRenderer>().sprite = leftright;
+			facingRight = moveHorizontal < -0.1;
+			
+			Vector3 theScale = transform.localScale;
+			
+			if (moveHorizontal > 0.1) {
+				theScale.x = -initialScale.x;
+			} else {
+				theScale.x = initialScale.x;
+			}
+			
+			
+			transform.localScale = theScale;
+		}
+	}
+	
+	public void FrontBack (float moveVertical)
+	{
+		if(moveVertical > 0.1)
+		{
+			GetComponent<SpriteRenderer>().sprite = back;
+		}
+		
+		if(moveVertical < -0.1)
+		{
+			GetComponent<SpriteRenderer>().sprite = front;
+		}
+	}
 }
