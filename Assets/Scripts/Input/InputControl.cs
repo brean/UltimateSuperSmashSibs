@@ -31,7 +31,10 @@ public class InputControl : MonoBehaviour
     void Start()
     {
 		PlayerSelectManager playerSelectManager = FindObjectOfType<PlayerSelectManager>();
-        player = playerSelectManager.getPlayerForCharacter(character);
+        if (playerSelectManager != null) {
+            player = playerSelectManager.getPlayerForCharacter(character);
+        }
+        
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
         inputName = this.gameObject.name;
