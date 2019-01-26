@@ -22,6 +22,9 @@ public class InputControl : MonoBehaviour
     [Tooltip("stun a player for some time")]
     public float stunTimer = 0f;
 
+    public Rigidbody2D snatchedBy;
+    public float snatchedTimer = 0f;
+
     private Rigidbody2D rb2d;
 	
 	private bool facingRight;
@@ -57,16 +60,23 @@ public class InputControl : MonoBehaviour
     void Update()
     {
 
-        if (stunTimer > 0f)
+        if (snatchedTimer > 0f)
+        {
+            snatchedTimer -= Time.deltaTime;
+            rb2d.position = snatchedBy.transform.position;
+        } else if(stunTimer > 0f)
         {
             stunTimer -= Time.deltaTime;
-        } else
+        }
+        else
         {
             movePlayer(inputName + "Joy");
             movePlayer(inputName + "Key");
 
             updateAbility();
         }
+
+
     }
 
     void movePlayer(string input) {
@@ -78,7 +88,7 @@ public class InputControl : MonoBehaviour
             moveHorizontal = -moveHorizontal;
             moveVertical = -moveVertical;
         }
-        Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
+        //Debug.Log("horizon: " + moveHorizontal + " , vertical: " + moveVertical);
         if (Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical) < .1) {
             return;
         }
@@ -161,6 +171,19 @@ public class InputControl : MonoBehaviour
                 
                         break;
                     case "Player2": //Macho
+                        GameObject[] players2 = GameObject.FindGameObjectsWithTag("Player");
+
+                        foreach (GameObject player in players2)
+                        {
+                            float dist = Vector3.Distance(player.transform.position, rb2d.position);
+                            if (dist <= 2f && dist != 0f)
+                            {
+                                print("snatch!!!!!!!!!!!!!!!!!!!!!!!");
+                                player.GetComponent<InputControl>().snatchedBy = rb2d;
+                                player.GetComponent<InputControl>().snatchedTimer = 4f;
+                            }
+                        }
+
                         break;
                     case "Player3": //Hipster
                         GameObject smokey = Instantiate(SmokeyPrefab);
