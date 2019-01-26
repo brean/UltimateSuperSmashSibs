@@ -7,6 +7,8 @@ public class Button : MonoBehaviour
     public GameObject myObstacle;
     public GameObject mySupport;
 
+    public Sprite deactivatedSprite;
+
     [Range(1,2)] // 1 = Good, 2 = Evil
     public int buttonType;
 
@@ -38,6 +40,7 @@ public class Button : MonoBehaviour
                 if (other.gameObject.CompareTag("Player")){
                     myObstacle.SetActive(false);
                     mySupport.SetActive(true);
+                    this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
                     Debug.Log("Good Button activated!");
                 }
                 break;
@@ -49,4 +52,6 @@ public class Button : MonoBehaviour
                 break;
         }
     }
+
+
 }
