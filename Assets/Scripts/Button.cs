@@ -12,6 +12,9 @@ public class Button : MonoBehaviour
     [Range(1, 2)] // 1 = Good, 2 = Evil
     public int buttonType;
 
+    //for Evil Buttons
+    float fenceUpDuration = 5f;
+
     private void Start()
     {
 
@@ -45,7 +48,7 @@ public class Button : MonoBehaviour
                 if (other.gameObject.CompareTag("Player"))
                 {
                     myObstacle.SetActive(false);
-                    mySupport.SetActive(true);
+                    StartCoroutine(putUpTheBridge());
                     this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
                     Debug.Log("Good Button activated!");
                 }
@@ -53,18 +56,38 @@ public class Button : MonoBehaviour
             case 2:
                 if (other.gameObject.CompareTag("Player"))
                 {
-                    putUpTheFences();
+                    StartCoroutine(putUpTheFence());
                     Debug.Log("Bad Button activated!");
                 }
                 break;
         }
     }
 
-    IEnumerator putUpTheFences()
-    {
-        myObstacle.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        myObstacle.SetActive(false);
+    IEnumerator putUpTheBridge(){
+        StartCoroutine(blinkObject(1f, transform.Find("Bridge").gameObject));
+        yield return new WaitForSecondsRealtime(1f);
+        mySupport.SetActive(true);
+        Debug.Log("Bridge up!");
+
     }
 
+    IEnumerator putUpTheFence() {
+        myObstacle.SetActive(true);
+        Debug.Log("Fence Up!");
+        yield return new WaitForSecondsRealtime(fenceUpDuration-fenceUpDuration/4);
+        StartCoroutine(blinkObject(fenceUpDuration/4, transform.Find("Fence").gameObject));
+    }
+
+    IEnumerator blinkObject(float blinkTime, GameObject childObject) {
+        Debug.Log("Blink Fence");
+        float endTime = Time.time + blinkTime;
+        while (Time.time < endTime) {
+            childObject.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSecondsRealtime(0.15f);
+            childObject.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSecondsRealtime(0.15f);
+        }
+        myObstacle.SetActive(false);
+        Debug.Log("Fence Down!");
+    }
 }
