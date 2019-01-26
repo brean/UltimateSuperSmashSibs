@@ -7,6 +7,7 @@ public class Button : MonoBehaviour
     public GameObject myObstacle;
     public GameObject mySupport;
 
+    public Sprite activatedSprite;
     public Sprite deactivatedSprite;
 
     [Range(1, 2)] // 1 = Good, 2 = Evil
@@ -15,8 +16,11 @@ public class Button : MonoBehaviour
     //for Evil Buttons
     float fenceUpDuration = 5f;
 
+    bool buttonActive = true;
+
     private void Start()
     {
+        activatedSprite = GetComponent<SpriteRenderer>().sprite;
 
         switch (buttonType)
         {
@@ -45,16 +49,16 @@ public class Button : MonoBehaviour
         switch (buttonType)
         {
             case 1:
-                if (other.gameObject.CompareTag("Player"))
+                if (other.gameObject.CompareTag("Player") && buttonActive)
                 {
-                    myObstacle.SetActive(false);
                     StartCoroutine(putUpTheBridge());
+                    buttonActive = false;
                     this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
                     Debug.Log("Good Button activated!");
                 }
                 break;
             case 2:
-                if (other.gameObject.CompareTag("Player"))
+                if (other.gameObject.CompareTag("Player") && buttonActive)
                 {
                     StartCoroutine(putUpTheFence());
                     Debug.Log("Bad Button activated!");
@@ -64,9 +68,10 @@ public class Button : MonoBehaviour
     }
 
     IEnumerator putUpTheBridge(){
+        mySupport.SetActive(true);
         StartCoroutine(blinkObject(1f, transform.Find("Bridge").gameObject));
         yield return new WaitForSecondsRealtime(1f);
-        mySupport.SetActive(true);
+        myObstacle.SetActive(false);
         Debug.Log("Bridge up!");
 
     }
@@ -74,12 +79,19 @@ public class Button : MonoBehaviour
     IEnumerator putUpTheFence() {
         myObstacle.SetActive(true);
         Debug.Log("Fence Up!");
-        yield return new WaitForSecondsRealtime(fenceUpDuration-fenceUpDuration/4);
-        StartCoroutine(blinkObject(fenceUpDuration/4, transform.Find("Fence").gameObject));
-    }
+        buttonActive = false;
+        this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
+        yield return new WaitForSecondsRealtime(fenceUpDuration - fenceUpDuration / 4);
+        StartCoroutine(blinkObject(fenceUpDuration / 4, transform.Find("Fence").gameObject));
+        yield return new WaitForSecondsRealtime(fenceUpDuration / 4);
+        myObstacle.SetActive(false);
+        Debug.Log("Fence Down!");
+        this.GetComponent<SpriteRenderer>().sprite = activatedSprite;
+        buttonActive = true;
+     }
 
     IEnumerator blinkObject(float blinkTime, GameObject childObject) {
-        Debug.Log("Blink Fence");
+        Debug.Log("Blinking object for " + blinkTime);
         float endTime = Time.time + blinkTime;
         while (Time.time < endTime) {
             childObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -87,7 +99,5 @@ public class Button : MonoBehaviour
             childObject.GetComponent<SpriteRenderer>().enabled = true;
             yield return new WaitForSecondsRealtime(0.15f);
         }
-        myObstacle.SetActive(false);
-        Debug.Log("Fence Down!");
     }
 }
