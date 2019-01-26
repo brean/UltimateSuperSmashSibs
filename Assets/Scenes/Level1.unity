@@ -12098,7 +12098,7 @@ GameObject:
   - component: {fileID: 427694792}
   - component: {fileID: 427694791}
   m_Layer: 0
-  m_Name: Player 3
+  m_Name: Player3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12142,7 +12142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: WasdKeys
+  inputName: 
   speed: 0.1
 --- !u!50 &427694793
 Rigidbody2D:
@@ -13706,7 +13706,7 @@ GameObject:
   - component: {fileID: 1200704474}
   - component: {fileID: 1200704473}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13750,7 +13750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: ArrowKeys
+  inputName: 
   speed: 0.1
 --- !u!50 &1200704475
 Rigidbody2D:
@@ -16234,7 +16234,7 @@ GameObject:
   - component: {fileID: 1904139211}
   - component: {fileID: 1904139210}
   m_Layer: 0
-  m_Name: Player 4
+  m_Name: Player4
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16278,7 +16278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: WasdKeys
+  inputName: 
   speed: 0.1
 --- !u!50 &1904139212
 Rigidbody2D:
@@ -16446,7 +16446,7 @@ GameObject:
   - component: {fileID: 1975440582}
   - component: {fileID: 1975440581}
   m_Layer: 0
-  m_Name: Player 2
+  m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16490,7 +16490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputName: ArrowKeys
+  inputName: 
   speed: 0.1
 --- !u!50 &1975440583
 Rigidbody2D:
