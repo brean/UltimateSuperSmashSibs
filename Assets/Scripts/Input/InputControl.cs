@@ -21,8 +21,8 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis(inputName + "Horizontal");
-        float moveVertical = -Input.GetAxis(inputName + "Vertical");
+        float moveHorizontal = Input.GetAxis("ArrowKeysHorizontal");
+        float moveVertical = Input.GetAxis("ArrowKeysVertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.MovePosition(rb2d.position + (movement * speed));
     }
