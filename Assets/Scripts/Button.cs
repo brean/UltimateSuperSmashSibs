@@ -70,7 +70,7 @@ public class Button : MonoBehaviour
     IEnumerator putUpTheBridge(){
         mySupport.SetActive(true);
         StartCoroutine(blinkObject(1f, transform.Find("Bridge").gameObject));
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(1.5f);
         myObstacle.SetActive(false);
         Debug.Log("Bridge up!");
 

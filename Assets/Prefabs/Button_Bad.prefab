@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myObstacle: {fileID: 276778826234777907}
   mySupport: {fileID: 0}
+  activatedSprite: {fileID: 0}
   deactivatedSprite: {fileID: 21300000, guid: 358b92ae1c5234f11b3b6e635445b1ed, type: 3}
   buttonType: 2
 --- !u!61 &276778825508009059
