@@ -90,30 +90,32 @@ public class PlayerManager : MonoBehaviour
             }
         }*/
 
-        List<float> xess = new List<float>();
-
-        foreach (GameObject entry in PlayerDict.Values)
+        if(PlayerDict.Count != 0)
         {
-            xess.Add(entry.transform.position.x);
-        }
+            List<float> xess = new List<float>();
 
-        if (xess.Count != 0)
-        {
-            xPlayerMin = xess.Min();
-            xPlayerMax = xess.Max();
-        }
+            foreach (GameObject entry in PlayerDict.Values)
+            {
+                xess.Add(entry.transform.position.x);
+            }
 
-        // camera is always in the middle of all players
-        // camera ignores padding
-        float newCamPosX = xPlayerMin + ((xPlayerMax - xPlayerMin) / 2);
-        if (newCamPosX < camHalfWidth)
-        {
-            camera.transform.position = new Vector3(camHalfWidth, camera.transform.position.y, camera.transform.position.z);
-        }
-        else
-        {
-            camera.transform.position = new Vector3(newCamPosX, camera.transform.position.y, camera.transform.position.z);
-        }
+            if (xess.Count != 0)
+            {
+                xPlayerMin = xess.Min();
+                xPlayerMax = xess.Max();
+            }
 
+            // camera is always in the middle of all players
+            // camera ignores padding
+            float newCamPosX = xPlayerMin + ((xPlayerMax - xPlayerMin) / 2);
+            if (newCamPosX < camHalfWidth)
+            {
+                camera.transform.position = new Vector3(camHalfWidth, camera.transform.position.y, camera.transform.position.z);
+            }
+            else
+            {
+                camera.transform.position = new Vector3(newCamPosX, camera.transform.position.y, camera.transform.position.z);
+            }
+        }
     }
 }
