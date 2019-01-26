@@ -303,11 +303,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 715107339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
+  m_Script: {fileID: 11500000, guid: 451b8dc727314c2488d3cef75b3f90b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: 0
-  speed: 0.01
+  PlayerPrefab: {fileID: 3641914588741577943, guid: e9844029c2e2132459ae69f6260b2085,
+    type: 3}
 --- !u!1 &1545640905
 GameObject:
   m_ObjectHideFlags: 0
