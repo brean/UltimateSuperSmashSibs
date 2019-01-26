@@ -105,14 +105,26 @@ public class InputControl : MonoBehaviour
 	}
 
     public void updateAbility() {
-        
         if (abilityCooldown <= 0)
         {
             if (Input.GetAxis("UseAbility") == 1)
             {
-                GameObject smokey = Instantiate(SmokeyPrefab);
-                smokey.name = "SmokeyWeedyBombyThingy";
-                smokey.transform.position = rb2d.position;
+                switch (this.gameObject.name)
+                {
+                    case "Player1": //Prinsessin
+                        break;
+                    case "Player2": //Macho
+                        break;
+                    case "Player3": //Hipster
+                        GameObject smokey = Instantiate(SmokeyPrefab);
+                        smokey.name = "SmokeyWeedyBombyThingy";
+                        smokey.transform.position = rb2d.position;
+                        break;
+                    case "Player4": //Nerd
+                        break;
+                    default: break;
+                }
+
                 abilityCooldown = 5;
             }
         }
