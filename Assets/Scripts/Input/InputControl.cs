@@ -21,6 +21,10 @@ public class InputControl : MonoBehaviour
 	public Sprite leftright;
 	private Vector3 initialScale;
 
+    //ability stuff
+    public GameObject SmokeyPrefab;
+    private float abilityCooldown = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +43,8 @@ public class InputControl : MonoBehaviour
         movePlayer(inputName + "Joy");
         movePlayer(inputName + "Key");
 
-        GetComponent<Player>().updateAbility(Input.GetAxis("UseAbility") == 1);
+        updateAbility();
+        
     }
 
     void movePlayer(string input) {
@@ -98,4 +103,22 @@ public class InputControl : MonoBehaviour
 			transform.localScale = initialScale;
 		}
 	}
+
+    public void updateAbility() {
+        
+        if (abilityCooldown <= 0)
+        {
+            if (Input.GetAxis("UseAbility") == 1)
+            {
+                GameObject smokey = Instantiate(SmokeyPrefab);
+                smokey.name = "SmokeyWeedyBombyThingy";
+                smokey.transform.position = rb2d.position;
+                abilityCooldown = 5;
+            }
+        }
+        else
+        {
+            abilityCooldown -= Time.deltaTime;
+        }
+    }
 }
