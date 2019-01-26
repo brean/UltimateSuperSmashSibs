@@ -19,6 +19,9 @@ public class InputControl : MonoBehaviour
     [Tooltip("invert a stoned player")]
     public float invertedTimer = 0f;
 
+    [Tooltip("stun a player for some time")]
+    public float stunTimer = 0f;
+
     private Rigidbody2D rb2d;
 	
 	private bool facingRight;
@@ -53,10 +56,17 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePlayer(inputName + "Joy");
-        movePlayer(inputName + "Key");
 
-        updateAbility();
+        if (stunTimer > 0f)
+        {
+            stunTimer -= Time.deltaTime;
+        } else
+        {
+            movePlayer(inputName + "Joy");
+            movePlayer(inputName + "Key");
+
+            updateAbility();
+        }
     }
 
     void movePlayer(string input) {
@@ -136,6 +146,19 @@ public class InputControl : MonoBehaviour
                 switch (this.gameObject.name)
                 {
                     case "Player1": //Prinsessin
+                        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+                        foreach (GameObject player in players)
+                        {
+                            float dist = Vector3.Distance(player.transform.position, rb2d.position);
+                            if(dist <= 6f && dist != 0f)
+                            {
+                                player.GetComponent<InputControl>().stunTimer = 2f;
+
+                            }
+                            
+                        }
+                
                         break;
                     case "Player2": //Macho
                         break;
