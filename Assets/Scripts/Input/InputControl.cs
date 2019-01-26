@@ -87,11 +87,13 @@ public class InputControl : MonoBehaviour
 		if(moveVertical > 0.1)
 		{
 			GetComponent<SpriteRenderer>().sprite = back;
+			transform.localScale = initialScale;
 		}
 		
 		if(moveVertical < -0.1)
 		{
 			GetComponent<SpriteRenderer>().sprite = front;
+			transform.localScale = initialScale;
 		}
 	}
 }
