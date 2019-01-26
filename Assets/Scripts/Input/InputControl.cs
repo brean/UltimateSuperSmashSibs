@@ -38,6 +38,8 @@ public class InputControl : MonoBehaviour
     {
         movePlayer(inputName + "Joy");
         movePlayer(inputName + "Key");
+
+        GetComponent<Player>().updateAbility(Input.GetAxis("UseAbility") == 1);
     }
 
     void movePlayer(string input) {
