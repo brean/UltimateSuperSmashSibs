@@ -49108,7 +49108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  audioS: {fileID: 0}
   itemType: 2
 --- !u!212 &648330110
 SpriteRenderer:
@@ -50172,7 +50171,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
