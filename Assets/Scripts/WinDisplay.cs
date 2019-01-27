@@ -19,7 +19,7 @@ public class WinDisplay : MonoBehaviour
             if (p.team == GameManager.instance.winningTeam)
             { 
             GameObject.Find("WinningPlayer"+j).GetComponent<SpriteRenderer>().sprite = 
-                man.SpritesForCharacter(p.character).front;
+                man.SpritesForCharacter(p.character).winning;
                 j++;
             }
         }
