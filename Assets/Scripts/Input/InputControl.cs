@@ -203,6 +203,10 @@ public class InputControl : MonoBehaviour
                             float dist = Vector3.Distance(player.transform.position, rb2d.position);
                             if(dist <= 6f && dist != 0f)
                             {
+                                if (player.gameObject.GetComponent<InputControl>().player.character == Character.princess)
+                                {
+                                    continue;
+                                }
                                 player.GetComponent<InputControl>().stunTimer = 2f;
 
                             }
