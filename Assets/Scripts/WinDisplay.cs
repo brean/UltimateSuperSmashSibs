@@ -21,7 +21,7 @@ public class WinDisplay : MonoBehaviour
                 j++;
             }
         }
-        GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = winTextTeam[GameManager.instance.winningTeam - 1];
+        GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = winTextTeam[GameManager.instance.winningTeam];
 
     }
 
