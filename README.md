@@ -60,7 +60,7 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
       <img src="/Assets/Sprites/Player/Nerd_Sprite_Front.png?raw=true" alt="Hipser" />
     </td>
     <td>
-      The little brother is a genius! He remembers the first 10 digits of pi and knows how to setup the WiFi. He with his knowledge and skills he is capable to hack time so other siblings steps get reversed.
+      The little brother is a genius! He remembers the first 10 digits of pi and knows how to setup the WiFi. With his knowledge and skills he is capable to hack time so other siblings steps get reversed. 
     </td>
   </tr>
   
@@ -72,7 +72,7 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
       <img src="/Assets/Sprites/Player/Jock_Sprite_Front.png?raw=true" alt="Hipser" />
     </td>
     <td>
-      The big brother is a big sports enthusiast. Although he mostly sits around watching all kind of sports game on the couch he somehow managed to get very strong! He can just lift up other players and carry them around.
+      The big brother is a big sports enthusiast. Although he mostly sits on the couch watching all kind of sport games he somehow managed to get very strong! He can just lift up other players and carry them around.
     </td>
   </tr>
   </table>
