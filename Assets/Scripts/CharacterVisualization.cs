@@ -18,7 +18,7 @@ public class CharacterVisualization : MonoBehaviour
     void Start()
     {
         
-        player = GameManager.instance.playerForCharacter(GetComponent<CharacterSetting>().character);
+        player = GameManager.getPlayerForCharacter(GetComponent<CharacterSetting>().character);
 
         foreach (Transform t in transform)
         {

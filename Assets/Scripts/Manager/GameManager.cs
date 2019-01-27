@@ -35,6 +35,15 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public static Player getPlayerForCharacter(Character character)
+    {
+        if (instance == null)
+        {
+            instance = new GameManager();
+        }
+        return instance.playerForCharacter(character);
+    }
+
     public Player playerForCharacter(Character character)
     {
         if (players.Count != 4)
