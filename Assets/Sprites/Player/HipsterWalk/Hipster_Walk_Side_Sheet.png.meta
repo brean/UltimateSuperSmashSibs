@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 78dc341ca855fd34da3ac80be951e447
+guid: 7e833e455ee040245876c59496e5e812
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jock_Front_Sheet_0
-    21300002: Jock_Front_Sheet_1
-    21300004: Jock_Front_Sheet_2
-    21300006: Jock_Front_Sheet_3
+    21300000: Hipster_Walk_Side_Sheet_0
+    21300002: Hipster_Walk_Side_Sheet_1
+    21300004: Hipster_Walk_Side_Sheet_2
+    21300006: Hipster_Walk_Side_Sheet_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -36,7 +36,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jock_Front_Sheet_0
+      name: Hipster_Walk_Side_Sheet_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 8
-        width: 104
-        height: 172
+        x: 24
+        y: 11
+        width: 97
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66ae5fd3bddc1ab4db4ebd8d911d2469
+      spriteID: 9c37096d135b30041b3e89e9d57810bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_1
+      name: Hipster_Walk_Side_Sheet_1
       rect:
         serializedVersion: 2
-        x: 141
-        y: 5
-        width: 104
-        height: 172
+        x: 152
+        y: 11
+        width: 97
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85fc08e180168db4c98e7193f411dbb4
+      spriteID: 6c35394e3e884cb459c970c883429401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_2
+      name: Hipster_Walk_Side_Sheet_2
       rect:
         serializedVersion: 2
-        x: 269
-        y: 8
-        width: 104
-        height: 172
+        x: 280
+        y: 11
+        width: 97
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca56ce83aa0693c45a58a576199258f3
+      spriteID: 948cf27762bea254583de2621a849176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_3
+      name: Hipster_Walk_Side_Sheet_3
       rect:
         serializedVersion: 2
-        x: 397
-        y: 5
-        width: 104
-        height: 172
+        x: 408
+        y: 11
+        width: 97
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3b095ba1985e740827188e79cb006f
+      spriteID: 01ca173b1c59ad44bae44a89adc1601a
       vertices: []
       indices: 
       edges: []
@@ -192,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 54906b943b8fcec4681cb691a41e32e3
+    spriteID: f95a0bcd218becc4b86b1d8966a83ffd
     vertices: []
     indices: 
     edges: []

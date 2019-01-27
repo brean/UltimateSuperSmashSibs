@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 78dc341ca855fd34da3ac80be951e447
+guid: d72238dcba68c344a98eb94409236482
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jock_Front_Sheet_0
-    21300002: Jock_Front_Sheet_1
-    21300004: Jock_Front_Sheet_2
-    21300006: Jock_Front_Sheet_3
+    21300000: Nerd_Walk_Side_Sheet_0
+    21300002: Nerd_Walk_Side_Sheet_1
+    21300004: Nerd_Walk_Side_Sheet_2
+    21300006: Nerd_Walk_Side_Sheet_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jock_Front_Sheet_0
+      name: Nerd_Walk_Side_Sheet_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 8
-        width: 104
-        height: 172
+        x: 23
+        y: 11
+        width: 87
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66ae5fd3bddc1ab4db4ebd8d911d2469
+      spriteID: d27f124a8cf9cbe4f9514ed7db00a0af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_1
+      name: Nerd_Walk_Side_Sheet_1
       rect:
         serializedVersion: 2
-        x: 141
-        y: 5
-        width: 104
-        height: 172
+        x: 151
+        y: 11
+        width: 87
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85fc08e180168db4c98e7193f411dbb4
+      spriteID: ab86518c7c6151f4d838b5a29d2fe228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_2
+      name: Nerd_Walk_Side_Sheet_2
       rect:
         serializedVersion: 2
-        x: 269
-        y: 8
-        width: 104
-        height: 172
+        x: 279
+        y: 11
+        width: 87
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca56ce83aa0693c45a58a576199258f3
+      spriteID: 83b2f2d4be6ef714ea32cbd77ba6690c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_3
+      name: Nerd_Walk_Side_Sheet_3
       rect:
         serializedVersion: 2
-        x: 397
-        y: 5
-        width: 104
-        height: 172
+        x: 407
+        y: 11
+        width: 87
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3b095ba1985e740827188e79cb006f
+      spriteID: 2ebfccaf35adbfb42b517254302570fe
       vertices: []
       indices: 
       edges: []
@@ -192,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 54906b943b8fcec4681cb691a41e32e3
+    spriteID: 09525e1181f691f4ca2ad39b86608f30
     vertices: []
     indices: 
     edges: []
