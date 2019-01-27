@@ -13,16 +13,16 @@ public class Item : MonoBehaviour
     {
         switch (itemType){
             case 1:
-                if (other.gameObject.CompareTag("Player"))
-                {
+                if (other.gameObject.CompareTag("Player")){
+                    Debug.Log("Speedboost activated!");
                     player = other.gameObject;
                     player.GetComponent<InputControl>().speedPlayerUp(0.2f, 2f);
+                    GetComponent<AudioSource>().Play(0);
                     this.gameObject.SetActive(false);
                 }
                 break;
             case 2:
-                if (other.gameObject.CompareTag("Player"))
-                {
+                if (other.gameObject.CompareTag("Player")){
                     player = other.gameObject;
                     Debug.Log("Warpfeld activated!");
                     // TODO:
@@ -32,8 +32,8 @@ public class Item : MonoBehaviour
                 break;
             case 3:
                 //Cloud smoke, to invert stuff
-                if (other.gameObject.CompareTag("Player"))
-                {
+                if (other.gameObject.CompareTag("Player")){
+                    Debug.Log("Hipster Smokebomb activated!");
                     player = other.gameObject;
                     player.GetComponent<InputControl>().invertedTimer = 10f;
                     this.gameObject.SetActive(false);
@@ -42,9 +42,5 @@ public class Item : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
-    {
-
-    }
     
 }
