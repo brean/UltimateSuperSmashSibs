@@ -24,9 +24,6 @@ public class InputControl : MonoBehaviour
     private Rigidbody2D rb2d;
 	
 	private bool facingRight;
-	public Sprite front;
-	public Sprite back;
-	public Sprite leftright;
 	private Vector3 initialScale;
 
     public float backwardsTimer = 0f;
@@ -35,16 +32,17 @@ public class InputControl : MonoBehaviour
     //ability stuff
     public GameObject SmokeyPrefab;
     private float abilityCooldown = 5;
+    CharacterSpiteSettings spriteSettings;
 
     // Start is called before the first frame update
     void Start()
     {
         player = PlayerSelectManager.playerForCharacter(GetComponent<CharacterSetting>().character);
+        spriteSettings = GetComponent<CharacterSpriteManager>().SpritesForCharacter(player.character);
 
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
 		
-		GetComponent<SpriteRenderer>().sprite = front;
 		initialScale = transform.localScale;
 
         startingSpeed = speed;
@@ -103,7 +101,7 @@ public class InputControl : MonoBehaviour
 	{
 		if (moveHorizontal > 0.1 || moveHorizontal < -0.1 )
 		{
-			GetComponent<SpriteRenderer>().sprite = leftright;
+            GetComponent<SpriteRenderer>().sprite = spriteSettings.left;
 			facingRight = moveHorizontal < -0.1;
 			
 			Vector3 theScale = transform.localScale;
@@ -123,13 +121,13 @@ public class InputControl : MonoBehaviour
 	{
 		if(moveVertical > 0.1)
 		{
-			GetComponent<SpriteRenderer>().sprite = back;
+			GetComponent<SpriteRenderer>().sprite = spriteSettings.back;
 			transform.localScale = initialScale;
 		}
 		
 		if(moveVertical < -0.1)
 		{
-			GetComponent<SpriteRenderer>().sprite = front;
+			GetComponent<SpriteRenderer>().sprite = spriteSettings.front;
 			transform.localScale = initialScale;
 		}
 	}

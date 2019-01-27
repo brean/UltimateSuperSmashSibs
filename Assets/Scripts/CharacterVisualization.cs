@@ -29,4 +29,10 @@ public class CharacterVisualization : MonoBehaviour
         }
         // set team color from 
     }
+
+    public void showCharacter(Character character)
+    {
+        CharacterSpiteSettings settings = GetComponent<CharacterSpriteManager>().SpritesForCharacter(character);
+        GetComponent<SpriteRenderer>().sprite = settings.front;
+    }
 }

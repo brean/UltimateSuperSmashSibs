@@ -9,4 +9,9 @@ public class CharacterSetting : MonoBehaviour
 {
     [Tooltip("character")] 
     public Character character;
+
+    private void OnValidate()
+    {
+        GetComponent<CharacterVisualization>().showCharacter(character);
+    }
 }

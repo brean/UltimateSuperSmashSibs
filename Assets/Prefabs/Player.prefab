@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2168787672685650610}
+  - component: {fileID: 4569284412574691449}
+  - component: {fileID: 7927703338501028670}
+  - component: {fileID: 2168787672685650613}
   - component: {fileID: 2168787672685650611}
   - component: {fileID: 2168787672685650612}
-  - component: {fileID: 4569284412574691449}
-  - component: {fileID: 2168787672685650613}
-  - component: {fileID: 7927703338501028670}
   - component: {fileID: 470608263}
+  - component: {fileID: 6586692949301879840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -37,6 +38,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4569284412574691449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168787672685650615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07057e9ec976594484d791fdb88793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: 0
+--- !u!114 &7927703338501028670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168787672685650615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85547b8be8d83d2408c5394b211ebdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+    inputType: 0
+    number: 0
+    character: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    team: 0
+    ready: 0
+    active: 0
+--- !u!114 &2168787672685650613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168787672685650615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+    inputType: 0
+    number: 0
+    character: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    team: 0
+    ready: 0
+    active: 0
+  speed: 0.2
+  invertedTimer: 0
+  stunTimer: 0
+  snatchedBy: {fileID: 0}
+  snatchedTimer: 0
+  front: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
+  back: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
+  leftright: {fileID: 21300000, guid: cb18204a2d48f4af4acc37c30b95a7d1, type: 3}
+  backwardsTimer: 0
+  SmokeyPrefab: {fileID: 0}
 --- !u!212 &2168787672685650611
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76088765f4d624db1be6ab2b3afebf7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,69 +170,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4569284412574691449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2168787672685650615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07057e9ec976594484d791fdb88793f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: 0
---- !u!114 &2168787672685650613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2168787672685650615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df849672a404de24d8d7a322921e0223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    inputType: 0
-    number: 0
-    character: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-    team: 0
-    ready: 0
-    active: 0
-  speed: 0.2
-  invertedTimer: 0
-  stunTimer: 0
-  snatchedBy: {fileID: 0}
-  snatchedTimer: 0
-  front: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
-  back: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
-  leftright: {fileID: 21300000, guid: cb18204a2d48f4af4acc37c30b95a7d1, type: 3}
-  backwardsTimer: 0
-  SmokeyPrefab: {fileID: 0}
---- !u!114 &7927703338501028670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2168787672685650615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85547b8be8d83d2408c5394b211ebdd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    inputType: 0
-    number: 0
-    character: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-    team: 0
-    ready: 0
-    active: 0
 --- !u!58 &470608263
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,6 +186,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -1.2}
   serializedVersion: 2
   m_Radius: 0.8
+--- !u!114 &6586692949301879840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168787672685650615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6056fa7ddc6f128448ad2b6c99117b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+  - character: 0
+    left: {fileID: 21300000, guid: abe1384da25580348a390070173f6c0f, type: 3}
+    front: {fileID: 21300000, guid: 76088765f4d624db1be6ab2b3afebf7f, type: 3}
+    back: {fileID: 21300000, guid: 1734128c8e051974ab09628c1ddc2226, type: 3}
+  - character: 1
+    left: {fileID: 21300000, guid: 5a6d70ded9e1e4315b9a047b8d6c2dd6, type: 3}
+    front: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1, type: 3}
+    back: {fileID: 21300000, guid: 35201674208878848a39f3b7d52d16f6, type: 3}
+  - character: 2
+    left: {fileID: 21300000, guid: cb18204a2d48f4af4acc37c30b95a7d1, type: 3}
+    front: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
+    back: {fileID: 21300000, guid: 9070f5d4409fac34991ff87fd211f23f, type: 3}
+  - character: 3
+    left: {fileID: 21300000, guid: 3896f1bf272ec42e89a316af89aaeaa1, type: 3}
+    front: {fileID: 21300000, guid: 0c6d68b0318234dff9bc04a7a4bbf184, type: 3}
+    back: {fileID: 21300000, guid: 6c62bb4abf29d764290abcc976e676c7, type: 3}
 --- !u!1 &3018105265575899800
 GameObject:
   m_ObjectHideFlags: 0

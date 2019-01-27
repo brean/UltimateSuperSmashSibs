@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,12 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 76088765f4d624db1be6ab2b3afebf7f,
-        type: 3}
     - target: {fileID: 2168787672685650613, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: character
@@ -213,6 +207,12 @@ PrefabInstance:
       propertyPath: leftright
       value: 
       objectReference: {fileID: 21300000, guid: abe1384da25580348a390070173f6c0f,
+        type: 3}
+    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76088765f4d624db1be6ab2b3afebf7f,
         type: 3}
     - target: {fileID: 4569284412574691449, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
@@ -13603,12 +13603,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1,
-        type: 3}
     - target: {fileID: 2168787672685650613, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: character
@@ -13638,10 +13632,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5a6d70ded9e1e4315b9a047b8d6c2dd6,
         type: 3}
+    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1,
+        type: 3}
     - target: {fileID: 4569284412574691449, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: character
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90e5b74abefb04557978b0a11ac7d00d, type: 3}
@@ -16245,12 +16245,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0c6d68b0318234dff9bc04a7a4bbf184,
-        type: 3}
     - target: {fileID: 2168787672685650613, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: character
@@ -16279,6 +16273,12 @@ PrefabInstance:
       propertyPath: leftright
       value: 
       objectReference: {fileID: 21300000, guid: 3896f1bf272ec42e89a316af89aaeaa1,
+        type: 3}
+    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c6d68b0318234dff9bc04a7a4bbf184,
         type: 3}
     - target: {fileID: 4569284412574691449, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
