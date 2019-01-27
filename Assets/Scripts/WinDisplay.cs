@@ -43,7 +43,7 @@ public class WinDisplay : MonoBehaviour
         {
             GameManager.instance.loadScene("Level2");
         }
-        if (GameManager.instance.previousSceneName == "Level2") {
+        else if (GameManager.instance.previousSceneName == "Level2") {
             finalWin.SetActive(true);
         }
     }
