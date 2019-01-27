@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
     public List<Player> players = new List<Player>();
     public int winningTeam;
 
+    public string previousSceneName;
+    public string currentSceneName;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //Check if instance already exists
         if (instance == null)
@@ -27,12 +30,21 @@ public class GameManager : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+
+        currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.activeSceneChanged += gettingSceneInfo;
+    }
+
+    void gettingSceneInfo(Scene previousScene, Scene newScene)
+    {
+        previousSceneName = currentSceneName;
+        currentSceneName = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public static Player getPlayerForCharacter(Character character)
@@ -99,7 +111,8 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    public void loadScene(string scene){
+    public void loadScene(string scene)
+    {
         SceneManager.LoadScene(scene);
     }
 

@@ -37,7 +37,7 @@ public class WinDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("return"))
+        if (Input.GetKeyDown("return") && GameManager.instance.previousSceneName == "Level1")
         {
             GameManager.instance.loadScene("Level2");
         }
