@@ -791,9 +791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade86971a5ff84726876cd55e32476d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winTextTeam:
-  - {fileID: 21300000, guid: ed67752510f3d46f9b3f726008477700, type: 3}
-  - {fileID: 21300000, guid: 42fd3aede8da74b7994ea9d867b058a2, type: 3}
+  wintextteam1: {fileID: 21300000, guid: ed67752510f3d46f9b3f726008477700, type: 3}
+  wintextteam2: {fileID: 21300000, guid: 42fd3aede8da74b7994ea9d867b058a2, type: 3}
 --- !u!4 &1078797486
 Transform:
   m_ObjectHideFlags: 0
