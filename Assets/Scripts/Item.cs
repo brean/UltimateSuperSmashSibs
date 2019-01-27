@@ -6,8 +6,15 @@ public class Item : MonoBehaviour
 {
     public GameObject player;
 
+
+    public AudioSource audioS;
+
     [Range(1,3)]
     public int itemType;
+
+    private void Start() {
+
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +24,8 @@ public class Item : MonoBehaviour
                     Debug.Log("Speedboost activated!");
                     player = other.gameObject;
                     player.GetComponent<InputControl>().speedPlayerUp(0.2f, 2f);
-                    GetComponent<AudioSource>().Play(0);
+                    audioS = GetComponent<AudioSource>();
+                    audioS.Play(0);
                     this.gameObject.SetActive(false);
                 }
                 break;
