@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WinDisplay : MonoBehaviour
 {
+    public Sprite wintextteam1;
+    public Sprite wintextteam2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +23,23 @@ public class WinDisplay : MonoBehaviour
             }
         }
 
-
+        switch (GameManager.instance.winningTeam) { 
+            case 1:
+                GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = wintextteam1;
+                break;
+            case 2:
+                GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = wintextteam2;
+                break;
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("return"))
+        {
+            GameManager.instance.loadScene("Level2");
+        }
     }
 }
