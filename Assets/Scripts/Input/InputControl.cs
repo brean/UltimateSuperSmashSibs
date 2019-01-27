@@ -21,6 +21,9 @@ public class InputControl : MonoBehaviour
     public Rigidbody2D snatchedBy;
     public float snatchedTimer = 0f;
 
+    [Tooltip("keep all the ghosts in a box")]
+    public List<GameObject> ghostBox;
+
     private Rigidbody2D rb2d;
 	
 	Animator animator;
@@ -33,12 +36,14 @@ public class InputControl : MonoBehaviour
     public Queue<Vector2> revQueue = new Queue<Vector2>();
     //ability stuff
     public GameObject SmokeyPrefab;
+    public GameObject GhostyPrefab;
     private float abilityCooldown = 5;
     CharacterSpiteSettings spriteSettings;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance = new GameManager();
         player = GameManager.instance.playerForCharacter(GetComponent<CharacterSetting>().character);
         spriteSettings = GetComponent<CharacterSpriteManager>().SpritesForCharacter(player.character);
 
@@ -55,10 +60,16 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( backwardsTimer > 0f && revQueue.Count > 0)
+        fadeDaGhosts();
+
+        if ( backwardsTimer > 0f && revQueue.Count > 0)
         {
             backwardsTimer -= 1;
-            rb2d.position = revQueue.Dequeue();
+            Vector2 retracePosition = revQueue.Dequeue();
+            if (backwardsTimer % 2 == 0) //limit ghosties
+                dropGhost(retracePosition);
+
+            rb2d.position = retracePosition;
         }
         else if (snatchedTimer > 0f)
         {
@@ -215,6 +226,30 @@ public class InputControl : MonoBehaviour
             abilityCooldown -= Time.deltaTime;
         }
     }
+
+    void dropGhost(Vector2 pos)
+    {
+        GameObject smokey = Instantiate(GhostyPrefab);
+        smokey.transform.position = pos;
+        ghostBox.Add(smokey);
+    }
+
+    void fadeDaGhosts()
+    {
+        for (int i = 0; i < ghostBox.Count; i++)
+        {
+            var ghost = ghostBox[i];
+            var next = new Color(ghost.GetComponent<SpriteRenderer>().color.a, ghost.GetComponent<SpriteRenderer>().color.b, (ghost.GetComponent<SpriteRenderer>().color.g - 0.05f));
+            Debug.Log(ghost.GetComponent<SpriteRenderer>().color);
+            ghost.GetComponent<SpriteRenderer>().color = next;
+            if (next.g <= 0f)
+            {
+                ghostBox.Remove(ghost);
+                Destroy(ghost);
+            }
+        }
+    }
+
 }
 
 
