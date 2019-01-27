@@ -6,6 +6,55 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSelectManager : MonoBehaviour
 {
+    public static Player playerForCharacter(Character character)
+    {
+        if (instance == null)
+        {
+            // quickly fake inputs for testing
+            instance = new PlayerSelectManager();
+            instance.players = new List<Player>
+            {
+                new Player{
+                    character = Character.princess,
+                    inputType = InputType.Key,
+                    number = 1,
+                    color = Color.red,
+                    team = 0,
+                    active = true,
+                    ready = true
+                },
+                new Player{
+                    character = Character.jock,
+                    inputType = InputType.Key,
+                    number = 2,
+                    color = Color.blue,
+                    team = 0,
+                    active = true,
+                    ready = true
+                },
+                new Player{
+                    character = Character.hipster,
+                    inputType = InputType.Key,
+                    number = 3,
+                    color = Color.green,
+                    team = 1,
+                    active = true,
+                    ready = true
+                },
+                new Player{
+                    character = Character.nerd,
+                    inputType = InputType.Key,
+                    number = 4,
+                    color = Color.yellow,
+                    team = 1,
+                    active = true,
+                    ready = true
+                }
+            };
+        }
+        return instance.getPlayerForCharacter(character);
+    }
+
     public static PlayerSelectManager instance;
     public List<GameObject> characterSelect = new List<GameObject>();
     [SerializeField]
