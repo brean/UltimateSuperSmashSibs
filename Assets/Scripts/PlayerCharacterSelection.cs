@@ -91,6 +91,6 @@ public class PlayerCharacterSelection : MonoBehaviour
         check.SetActive(player.ready);
         GetComponentInChildren<SpriteRenderer>().sprite = sprites[player.characterNumber()];
 
-        PlayerSelectManager.instance.checkReady();
+        GameObject.Find("Manager").GetComponent<PlayerSelectManager>().checkReady();
     }
 }

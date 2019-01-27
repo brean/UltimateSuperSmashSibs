@@ -6,67 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSelectManager : MonoBehaviour
 {
-    public static Player playerForCharacter(Character character)
-    {
-        if (instance == null)
-        {
-            // quickly fake inputs for testing
-            instance = new PlayerSelectManager();
-            instance.players = new List<Player>
-            {
-                new Player{
-                    character = Character.princess,
-                    inputType = InputType.Key,
-                    number = 1,
-                    color = Color.red,
-                    team = 0,
-                    active = true,
-                    ready = true
-                },
-                new Player{
-                    character = Character.jock,
-                    inputType = InputType.Key,
-                    number = 2,
-                    color = Color.blue,
-                    team = 0,
-                    active = true,
-                    ready = true
-                },
-                new Player{
-                    character = Character.hipster,
-                    inputType = InputType.Key,
-                    number = 3,
-                    color = Color.green,
-                    team = 1,
-                    active = true,
-                    ready = true
-                },
-                new Player{
-                    character = Character.nerd,
-                    inputType = InputType.Key,
-                    number = 4,
-                    color = Color.yellow,
-                    team = 1,
-                    active = true,
-                    ready = true
-                }
-            };
-        }
-        return instance.getPlayerForCharacter(character);
-    }
+
+
+
 
     public static PlayerSelectManager instance;
     public List<GameObject> characterSelect = new List<GameObject>();
     [SerializeField]
-    public List<Player> players = new List<Player>();
+
     public Color[] colors = new Color[]{ Color.red, Color.blue, Color.green, Color.yellow };
 
     public List<Character> remainingCharacter = new List<Character>(new[] { Character.jock, Character.hipster, Character.nerd, Character.princess });
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-        instance = this;
+        //DontDestroyOnLoad(this);
+        //instance = this;
+
     }
 
     // Start is called before the first frame update
@@ -80,21 +36,10 @@ public class PlayerSelectManager : MonoBehaviour
         }
     }
 
-    internal Player getPlayerForCharacter(Character character)
-    {
-        foreach (Player p in players)
-        {
-            if (p.character == character)
-            {
-                return p;
-            }
-        }
-        return null;
-    }
 
     void checkAddPlayer(int number, InputType inputType)
     {
-        foreach (Player p in players)
+        foreach (Player p in GameManager.instance.players)
         {
             if (p.number == number && p.inputType == inputType)
             {
@@ -111,11 +56,11 @@ public class PlayerSelectManager : MonoBehaviour
                 inputType = inputType,
                 active = true,
                 number = number,
-                color = colors[players.Count]
+                color = colors[GameManager.instance.players.Count]
             };
-            assignPlayerToCharacter(players.Count, p);
+            assignPlayerToCharacter(GameManager.instance.players.Count, p);
             remainingCharacter.RemoveAt(0);
-            players.Add(p);
+            GameManager.instance.players.Add(p);
         }
     }
 
@@ -128,7 +73,7 @@ public class PlayerSelectManager : MonoBehaviour
     void Update()
     {
         // new player can only until we have 4 players
-        if (players.Count < 4)
+        if (GameManager.instance.players.Count < 4)
         {
             for (int i = 0; i < characterSelect.Count; i++)
             {
@@ -141,14 +86,14 @@ public class PlayerSelectManager : MonoBehaviour
 
     internal void checkReady()
     {
-        if (players.Count != 4)
+        if (GameManager.instance.players.Count != 4)
         {
             // still waiting for group to be complete
             return;
         }
         List<Character> chars = new List<Character>();
         int numTeam1 = 0;
-        foreach (Player p in players)
+        foreach (Player p in GameManager.instance.players)
         {
             if (!p.ready)
             {
