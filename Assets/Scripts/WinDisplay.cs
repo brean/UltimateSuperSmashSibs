@@ -6,6 +6,7 @@ public class WinDisplay : MonoBehaviour
 {
     public Sprite wintext1;
     public Sprite wintext2;
+    public GameObject finalWin;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,9 @@ public class WinDisplay : MonoBehaviour
         if (Input.GetKeyDown("return") && GameManager.instance.previousSceneName == "Level1")
         {
             GameManager.instance.loadScene("Level2");
+        }
+        if (GameManager.instance.previousSceneName == "Level2") {
+            finalWin.SetActive(true);
         }
     }
 }
