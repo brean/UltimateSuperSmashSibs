@@ -61,7 +61,7 @@ public class InputControl : MonoBehaviour
     {
         fadeDaGhosts();
 
-        if ( backwardsTimer > 0f && revQueue.Count > 0)
+        if (backwardsTimer > 0f && revQueue.Count > 0)
         {
             backwardsTimer -= 1;
             Vector2 retracePosition = revQueue.Dequeue();
@@ -223,6 +223,11 @@ public class InputControl : MonoBehaviour
 
                         foreach (GameObject player in players3)
                         {
+                            if (player.gameObject.GetComponent<InputControl>().player.character == Character.nerd)
+                            {
+                                continue;
+                            }
+
                             player.GetComponent<InputControl>().backwardsTimer = 130f;
                             player.GetComponent<InputControl>().revQueue = player.GetComponent<InputControl>().movementHistory.revQueue();
 
