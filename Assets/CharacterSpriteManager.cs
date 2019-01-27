@@ -9,6 +9,7 @@ public class CharacterSpiteSettings
     public Sprite left;
     public Sprite front;
     public Sprite back;
+    public Sprite winning;
 }
 
 public class CharacterSpriteManager : MonoBehaviour
