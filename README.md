@@ -83,8 +83,21 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
 * Environment sprites: https://bakudas.itch.io/generic-rpg-pack
 
 ## Credits
+### Team
 
+ - Andreas – Senior Child Manager (Programming)
+ - Lena –Shoulder Pain Patient (Character Art)
+ - Luka – Project Destruction Manager (Programming)
+ - Malte – Time Wizard (Programming)
+ - Kim – Lead Bridge Builder (Level Design, Programming)
+ - Filiz – Running Picture Expert (Animation, Sound)
 
+### External Assets
+ - https://bakudas.itch.io/generic-rpg-pack
+ - https://assetstore.unity.com/packages/audio/sound-fx/retro-sound-effects-22153
+ - https://assetstore.unity.com/packages/audio/music/battle-music-album-030718-115751
+ - https://assetstore.unity.com/packages/audio/music/music-starter-kit-63054
+ - https://assetstore.unity.com/packages/audio/sound-fx/short-music-01-lite-15054
 
 ## Tools Used
 * Unity Game Engine (v2018.3.3)
