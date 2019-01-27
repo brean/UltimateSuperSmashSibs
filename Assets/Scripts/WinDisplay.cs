@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class WinDisplay : MonoBehaviour
 {
-    public Sprite wintextteam1;
-    public Sprite wintextteam2;
+    public Sprite wintext1;
+    public Sprite wintext2;
 
     // Start is called before the first frame update
     void Start()
     {
+
         CharacterSpriteManager man = GameObject.Find("Player").GetComponent<CharacterSpriteManager>();
         int j = 1;
         for (int i = 0; i < GameManager.instance.players.Count; i++)
@@ -25,10 +26,10 @@ public class WinDisplay : MonoBehaviour
 
         switch (GameManager.instance.winningTeam) { 
             case 1:
-                GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = wintextteam1;
+                GameObject.Find("WinText").GetComponent<SpriteRenderer>().sprite = wintext1;
                 break;
             case 2:
-                GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = wintextteam2;
+                GameObject.Find("WinText").GetComponent<SpriteRenderer>().sprite = wintext2;
                 break;
         }
 
