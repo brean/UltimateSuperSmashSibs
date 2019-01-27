@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 78dc341ca855fd34da3ac80be951e447
+guid: 60821dd5a21921840ba1a3fcd270ce4a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jock_Front_Sheet_0
-    21300002: Jock_Front_Sheet_1
-    21300004: Jock_Front_Sheet_2
-    21300006: Jock_Front_Sheet_3
+    21300000: Princess_Front_Sheet_0
+    21300002: Princess_Front_Sheet_1
+    21300004: Princess_Front_Sheet_2
+    21300006: Princess_Front_Sheet_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -110,13 +110,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jock_Front_Sheet_0
+      name: Princess_Front_Sheet_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 9
+        y: 11
+        width: 110
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532058a4b5396c94c94331a43a0ae74c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess_Front_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 137
         y: 8
-        width: 104
-        height: 172
+        width: 110
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66ae5fd3bddc1ab4db4ebd8d911d2469
+      spriteID: 17c53530ad841b845acdac2bc2bff802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_1
+      name: Princess_Front_Sheet_2
       rect:
         serializedVersion: 2
-        x: 141
-        y: 5
-        width: 104
-        height: 172
+        x: 265
+        y: 11
+        width: 110
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85fc08e180168db4c98e7193f411dbb4
+      spriteID: 95aba5b8b02908641af33ee2f677000f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jock_Front_Sheet_2
+      name: Princess_Front_Sheet_3
       rect:
         serializedVersion: 2
-        x: 269
+        x: 393
         y: 8
-        width: 104
-        height: 172
+        width: 110
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,27 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca56ce83aa0693c45a58a576199258f3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jock_Front_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 5
-        width: 104
-        height: 172
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b3b095ba1985e740827188e79cb006f
+      spriteID: 1b54aa2800c95604cad5be01edfcc7e8
       vertices: []
       indices: 
       edges: []
@@ -192,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 54906b943b8fcec4681cb691a41e32e3
+    spriteID: 6664715c205e96a47b44a7c026380abd
     vertices: []
     indices: 
     edges: []

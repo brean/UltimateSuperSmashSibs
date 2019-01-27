@@ -23,6 +23,8 @@ public class InputControl : MonoBehaviour
 
     private Rigidbody2D rb2d;
 	
+	Animator animator;
+	
 	private bool facingRight;
 	private Vector3 initialScale;
 
@@ -40,6 +42,8 @@ public class InputControl : MonoBehaviour
         player = GameManager.instance.playerForCharacter(GetComponent<CharacterSetting>().character);
         spriteSettings = GetComponent<CharacterSpriteManager>().SpritesForCharacter(player.character);
 
+		animator = GetComponent<Animator>();
+		animator.speed = 1;
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
 		
@@ -103,7 +107,7 @@ public class InputControl : MonoBehaviour
 		{
             GetComponent<SpriteRenderer>().sprite = spriteSettings.left;
 			facingRight = moveHorizontal < -0.1;
-			
+			animator.SetInteger ("Direction", 2);
 			Vector3 theScale = transform.localScale;
 			
 			if (moveHorizontal > 0.1) {
@@ -123,12 +127,14 @@ public class InputControl : MonoBehaviour
 		{
 			GetComponent<SpriteRenderer>().sprite = spriteSettings.back;
 			transform.localScale = initialScale;
+			animator.SetInteger ("Direction", 1);
 		}
 		
 		if(moveVertical < -0.1)
 		{
 			GetComponent<SpriteRenderer>().sprite = spriteSettings.front;
 			transform.localScale = initialScale;
+			animator.SetInteger ("Direction", 3);
 		}
 	}
 

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2168787672685650612}
   - component: {fileID: 470608263}
   - component: {fileID: 6586692949301879840}
+  - component: {fileID: 6845504213034070909}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -96,9 +97,6 @@ MonoBehaviour:
   stunTimer: 0
   snatchedBy: {fileID: 0}
   snatchedTimer: 0
-  front: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
-  back: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a, type: 3}
-  leftright: {fileID: 21300000, guid: cb18204a2d48f4af4acc37c30b95a7d1, type: 3}
   backwardsTimer: 0
   SmokeyPrefab: {fileID: 0}
 --- !u!212 &2168787672685650611
@@ -215,6 +213,25 @@ MonoBehaviour:
     left: {fileID: 21300000, guid: 3896f1bf272ec42e89a316af89aaeaa1, type: 3}
     front: {fileID: 21300000, guid: 0c6d68b0318234dff9bc04a7a4bbf184, type: 3}
     back: {fileID: 21300000, guid: 6c62bb4abf29d764290abcc976e676c7, type: 3}
+--- !u!95 &6845504213034070909
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168787672685650615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad88c7f4fe121244ebd2f146b2580860, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3018105265575899800
 GameObject:
   m_ObjectHideFlags: 0
