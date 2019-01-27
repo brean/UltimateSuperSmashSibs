@@ -22,7 +22,7 @@ public class Win : MonoBehaviour
     }
 
     IEnumerator goToWinScreen() {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
         GameManager.instance.loadScene("Win");
     }
 }
