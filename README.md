@@ -85,7 +85,7 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
 ## Credits
 ### Team
 
- - Andreas – Senior Child Manager (Programming)
+ - [Andreas](http://github.com/brean) – Senior Child Manager (Programming)
  - Lena –Shoulder Pain Patient (Character Art)
  - Luka – Project Destruction Manager (Programming)
  - Malte – Time Wizard (Programming)
