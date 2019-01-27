@@ -77,10 +77,25 @@ public class InputControl : MonoBehaviour
             rb2d.position = snatchedBy.transform.position;
         } else if(stunTimer > 0f)
         {
+
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "Stun")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                }
+            }
             stunTimer -= Time.deltaTime;
         }
         else
         {
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "Stun")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
             movePlayer(player.inputName());
 
             updateAbility();
