@@ -63,6 +63,14 @@ public class InputControl : MonoBehaviour
 
         if (backwardsTimer > 0f && revQueue.Count > 0)
         {
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "TimeTravel")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                }
+            }
+
             backwardsTimer -= 1;
             Vector2 retracePosition = revQueue.Dequeue();
             if (backwardsTimer % 2 == 0) //limit ghosties
@@ -91,6 +99,10 @@ public class InputControl : MonoBehaviour
             foreach (Transform t in transform)
             {
                 if (t.gameObject.name == "Stun")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (t.gameObject.name == "TimeTravel")
                 {
                     t.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 }
