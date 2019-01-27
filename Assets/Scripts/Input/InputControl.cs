@@ -43,7 +43,6 @@ public class InputControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance = new GameManager();
         player = GameManager.instance.playerForCharacter(GetComponent<CharacterSetting>().character);
         spriteSettings = GetComponent<CharacterSpriteManager>().SpritesForCharacter(player.character);
 
