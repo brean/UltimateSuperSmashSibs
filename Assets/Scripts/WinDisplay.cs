@@ -25,10 +25,10 @@ public class WinDisplay : MonoBehaviour
         }
 
         switch (GameManager.instance.winningTeam) { 
-            case 1:
+            case 0:
                 GameObject.Find("WinText").GetComponent<SpriteRenderer>().sprite = wintext1;
                 break;
-            case 2:
+            case 1:
                 GameObject.Find("WinText").GetComponent<SpriteRenderer>().sprite = wintext2;
                 break;
         }
