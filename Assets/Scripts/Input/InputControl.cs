@@ -8,9 +8,6 @@ public class InputControl : MonoBehaviour
     [Tooltip("Player information")]
 	public Player player;
 
-    [Tooltip("character for input control")]
-    public Character character;
-
     [Tooltip("speed of the player")]
     public float speed = .01f;
     float startingSpeed;
@@ -42,52 +39,7 @@ public class InputControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		PlayerSelectManager playerSelectManager = FindObjectOfType<PlayerSelectManager>();
-        if (playerSelectManager == null) {
-            // quickly fake inputs for testing
-            PlayerSelectManager.instance = new PlayerSelectManager();
-            PlayerSelectManager.instance.players = new List<Player>
-            {
-                new Player{
-                    character = Character.princess,
-                    inputType = InputType.Key,
-                    number = 1,
-                    color = Color.red,
-                    team = 0,
-                    active = true,
-                    ready = true
-                },
-                new Player{
-                    character = Character.jock,
-                    inputType = InputType.Key,
-                    number = 2,
-                    color = Color.blue,
-                    team = 0,
-                    active = true,
-                    ready = true
-                },
-                new Player{
-                    character = Character.hipster,
-                    inputType = InputType.Key,
-                    number = 3,
-                    color = Color.green,
-                    team = 1,
-                    active = true,
-                    ready = true
-                },
-                new Player{
-                    character = Character.nerd,
-                    inputType = InputType.Key,
-                    number = 4,
-                    color = Color.yellow,
-                    team = 1,
-                    active = true,
-                    ready = true
-                }
-            };
-            playerSelectManager = PlayerSelectManager.instance;
-        }
-        player = playerSelectManager.getPlayerForCharacter(character);
+        player = PlayerSelectManager.playerForCharacter(GetComponent<CharacterSetting>().character);
 
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
