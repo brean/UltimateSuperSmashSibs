@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WinDisplay : MonoBehaviour
 {
-    public List<Sprite> winTextTeam;
+    public Sprite wintextteam1;
+    public Sprite wintextteam2;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,15 @@ public class WinDisplay : MonoBehaviour
                 j++;
             }
         }
-        GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = winTextTeam[GameManager.instance.winningTeam];
+
+        switch (GameManager.instance.winningTeam) { 
+            case 1:
+                GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = wintextteam1;
+                break;
+            case 2:
+                GameObject.Find("WinningText").GetComponent<SpriteRenderer>().sprite = wintextteam2;
+                break;
+        }
 
     }
 
