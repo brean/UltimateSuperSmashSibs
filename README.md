@@ -30,12 +30,12 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
 ### Princess - the little sister
 ![Princess](/Assets/Sprites/Player/Princess_Sprite_Front.png?raw=true)
 
-The princess can be a little brat. If you ask her she'd tell her that's her looks that stun the others but they are just so fed up with her that they just can not go on and need a small break.
+The princess can be a little brat. If you ask her she'd tell you that's her looks that stun the others but they are just so fed up with her that they just can not go on and need a small break.
 
 ### Hipster - the big sister
-![Hipser](/Assets/Sprites/Player/Hipster_Sprite_Front_modified.png?raw=true)
-
-The hipster is a true rebel. She smokes weed as all the "cool kids" do and gets bored by her siblings easily. When another one of the siblings walks through her smoke cloud they get confused and walk opposite directions. 
+| | |
+|--|--|
+|![Hipser](/Assets/Sprites/Player/Hipster_Sprite_Front_modified.png?raw=true)|The hipster is a true rebel. She smokes weed as all the "cool kids" do and gets bored by her siblings easily. When another one of the siblings walks through her smoke cloud they get confused and walk opposite directions. |
 
 ### Nerd - the little brother
 ![Nerd](/Assets/Sprites/Player/Nerd_Sprite_Front.png?raw=true)
@@ -52,7 +52,11 @@ The big brother is a big sports enthusiast. Although he mostly sits around watch
 * Link to Google Drive with concepts and cool art: https://drive.google.com/drive/folders/1eG02bek7GPGTTkMUhT3eUNQE_F6dWeUE?usp=sharing
 * Environment sprites: https://bakudas.itch.io/generic-rpg-pack
 
+## Credits
+
+
+
 ## Tools Used
 * Unity Game Engine (v2018.3.3)
 * GIMP
-
+* Krita
