@@ -51,7 +51,7 @@ public class Button : MonoBehaviour
             case 1:
                 if (other.gameObject.CompareTag("Player") && buttonActive)
                 {
-                    //TODO: Play sound
+                    gameObject.GetComponent<AudioSource>().Play(0);
                     StartCoroutine(putUpTheBridge());
                     buttonActive = false;
                     this.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
@@ -61,6 +61,7 @@ public class Button : MonoBehaviour
             case 2:
                 if (other.gameObject.CompareTag("Player") && buttonActive)
                 {
+                    gameObject.GetComponent<AudioSource>().Play(0);
                     StartCoroutine(putUpTheFence());
                     Debug.Log("Bad Button activated!");
                 }

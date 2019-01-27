@@ -9,20 +9,23 @@ public class Item : MonoBehaviour
     [Range(1,3)]
     public int itemType;
 
+    private void Start() {
+
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         switch (itemType){
             case 1:
-                if (other.gameObject.CompareTag("Player"))
-                {
+                if (other.gameObject.CompareTag("Player")){
+                    Debug.Log("Speedboost activated!");
                     player = other.gameObject;
                     player.GetComponent<InputControl>().speedPlayerUp(0.2f, 2f);
-                    this.gameObject.SetActive(false);
+                    StartCoroutine(playSoundThenDeactivate());
                 }
                 break;
             case 2:
-                if (other.gameObject.CompareTag("Player"))
-                {
+                if (other.gameObject.CompareTag("Player")){
                     player = other.gameObject;
                     Debug.Log("Warpfeld activated!");
                     // TODO:
@@ -32,8 +35,8 @@ public class Item : MonoBehaviour
                 break;
             case 3:
                 //Cloud smoke, to invert stuff
-                if (other.gameObject.CompareTag("Player"))
-                {
+                if (other.gameObject.CompareTag("Player")){
+                    Debug.Log("Hipster Smokebomb activated!");
                     player = other.gameObject;
                     player.GetComponent<InputControl>().invertedTimer = 10f;
                     this.gameObject.SetActive(false);
@@ -42,9 +45,11 @@ public class Item : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
-    {
-
+    IEnumerator playSoundThenDeactivate() {
+        gameObject.GetComponent<AudioSource>().Play(0);
+        yield return new WaitForSecondsRealtime(0.5f);
+        this.gameObject.SetActive(false);
     }
-    
+
+
 }
