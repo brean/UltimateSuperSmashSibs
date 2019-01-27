@@ -18,6 +18,9 @@ public class InputControl : MonoBehaviour
     [Tooltip("stun a player for some time")]
     public float stunTimer = 0f;
 
+    public float screamAnimationTimer = 0f;
+
+
     public Rigidbody2D snatchedBy;
     public float snatchedTimer = 0f;
 
@@ -60,9 +63,18 @@ public class InputControl : MonoBehaviour
     void Update()
     {
         fadeDaGhosts();
+        decScream();
 
-        if ( backwardsTimer > 0f && revQueue.Count > 0)
+        if (backwardsTimer > 0f && revQueue.Count > 0)
         {
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "TimeTravel")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                }
+            }
+
             backwardsTimer -= 1;
             Vector2 retracePosition = revQueue.Dequeue();
             if (backwardsTimer % 2 == 0) //limit ghosties
@@ -76,10 +88,29 @@ public class InputControl : MonoBehaviour
             rb2d.position = snatchedBy.transform.position;
         } else if(stunTimer > 0f)
         {
+
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "Stun")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                }
+            }
             stunTimer -= Time.deltaTime;
         }
         else
         {
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "Stun")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                if (t.gameObject.name == "TimeTravel")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
             movePlayer(player.inputName());
 
             updateAbility();
@@ -171,12 +202,18 @@ public class InputControl : MonoBehaviour
                     case Character.princess:
                         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
+                        flashScream(rb2d.position);
+
                         foreach (GameObject player in players)
                         {
                             float dist = Vector3.Distance(player.transform.position, rb2d.position);
                             if(dist <= 6f && dist != 0f)
                             {
-                                player.GetComponent<InputControl>().stunTimer = 2f;
+                                if (player.gameObject.GetComponent<InputControl>().player.character == Character.princess)
+                                {
+                                    continue;
+                                }
+                                player.GetComponent<InputControl>().stunTimer = 3f;
 
                             }
                             
@@ -208,6 +245,11 @@ public class InputControl : MonoBehaviour
 
                         foreach (GameObject player in players3)
                         {
+                            if (player.gameObject.GetComponent<InputControl>().player.character == Character.nerd)
+                            {
+                                continue;
+                            }
+
                             player.GetComponent<InputControl>().backwardsTimer = 130f;
                             player.GetComponent<InputControl>().revQueue = player.GetComponent<InputControl>().movementHistory.revQueue();
 
@@ -224,6 +266,36 @@ public class InputControl : MonoBehaviour
         {
             abilityCooldown -= Time.deltaTime;
         }
+    }
+
+    void flashScream(Vector2 pos)
+    {
+        screamAnimationTimer = 0.5f;
+
+        foreach (Transform t in transform)
+        {
+            if (t.gameObject.name == "Scream")
+            {
+                t.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
+    }
+
+    void decScream()
+    {
+        if (screamAnimationTimer > 0) {
+            screamAnimationTimer -= 0.1f;
+        }
+        else {
+            foreach (Transform t in transform)
+            {
+                if (t.gameObject.name == "Scream")
+                {
+                    t.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+        }
+
     }
 
     void dropGhost(Vector2 pos)
