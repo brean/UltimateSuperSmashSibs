@@ -11,8 +11,6 @@ using System;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject PlayerPrefab;
-
     [Tooltip("max x of players")]
     public float xPlayerMax = 0;
 
@@ -54,32 +52,20 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    void CreatePlayer(string inputName)
-    {
-        if (PlayerDict.ContainsKey(inputName))
-        {
-            return;
-        }
-        GameObject NextPlayer = Instantiate(PlayerPrefab);
-        // NextPlayer.GetComponent<InputControl>().inputName = inputName;
-        NextPlayer.GetComponent<PlayerTeam>().SetTeam(PlayerDict.Count % 2);
-        // TODO: team = Player.Count % 2
-        PlayerDict.Add(inputName, NextPlayer);
-    }
-
     // Update is called once per frame
     void Update()
     {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        if(PlayerDict.Count != 0)
+        if(players.Length != 0)
         {
             List<float> xess = new List<float>();
 
-            foreach (GameObject entry in PlayerDict.Values)
+            foreach (GameObject player in players)
             {
                 try
                 {
-                    xess.Add(entry.transform.position.x);
+                    xess.Add(player.transform.position.x);
                 }
                 catch (NullReferenceException e)
                 {
