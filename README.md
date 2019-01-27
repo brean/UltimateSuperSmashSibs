@@ -30,18 +30,22 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
 ### Princess - the little sister
 ![Princess](/Assets/Sprites/Player/Princess_Sprite_Front.png?raw=true)
 
+The princess can be a little brat. If you ask her she'd tell her that's her looks that stun the others but they are just so fed up with her that they just can not go on and need a small break.
 
 ### Hipster - the big sister
 ![Hipser](/Assets/Sprites/Player/Hipster_Sprite_Front_modified.png?raw=true)
 
+The hipster is a true rebel. She smokes weed as all the "cool kids" do and gets bored by ther siblings easily. When another one of the siblings walks through her smoke cloud they get confused and walk oposide direcitons. 
 
 ### Nerd - the little brother
 ![Nerd](/Assets/Sprites/Player/Nerd_Sprite_Front.png?raw=true)
 
+The little brother is a genious! He remembers the first 10 digits of pi and knows how to setup the WiFi. He with his knowledge and skills he is capable to hack time so other siblings steps get reversed.
 
 ### Jock - the big brother
 ![Jock](/Assets/Sprites/Player/Jock_Sprite_Front.png?raw=true)
 
+The big brother is a big sports enthusiast. Although he mostly sits around watching all kind of sports game on the couch he somehow managed to get very strong! He can just lift up other players and carry them around.
 
 ## Assets
 
