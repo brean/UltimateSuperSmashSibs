@@ -4,7 +4,7 @@
 Game for the Global Game Jam 2019, developed in Bremen (see https://globalgamejam.org/2019/games/ultimate-super-smash-sibs )
 
 ## Description
-UltimateSuperSmashSibs is a Competitive Co-op sibling obstacle course.
+*Ultimate Super Smash Sibs* is a Competitive Co-op sibling obstacle course.
 
 Four children were playing around in the woods when they hear their parents calling them for dinner! Feeling their empty stomachs they quickly form two teams and start their journey. Which team will win? Who's home first?
 
@@ -28,15 +28,20 @@ We use the first left/right axis as well as "Button 0" (this is 'A') on the defa
 
 ## The Characters
 ### Princess - the little sister
+![Princess](/Assets/Sprites/Player/Princess_Sprite_Front.png?raw=true)
 
 
 ### Hipster - the big sister
+![Hipser](/Assets/Sprites/Player/Hipster_Sprite_Front_modified.png?raw=true)
 
 
 ### Nerd - the little brother
+![Nerd](/Assets/Sprites/Player/Nerd_Sprite_Front.png?raw=true)
 
 
 ### Jock - the big brother
+![Jock](/Assets/Sprites/Player/Jock_Sprite_Front.png?raw=true)
+
 
 ## Assets
 
