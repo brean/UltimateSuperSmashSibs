@@ -127,12 +127,12 @@ PrefabInstance:
     - target: {fileID: 2168787672685650610, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5499997
+      value: 4.71
       objectReference: {fileID: 0}
     - target: {fileID: 2168787672685650610, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.92
+      value: 17.45
       objectReference: {fileID: 0}
     - target: {fileID: 2168787672685650610, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
@@ -13646,7 +13646,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c6dd3d01b3e03428b9469970ab7a62b1,
+      objectReference: {fileID: 21300000, guid: 0c6d68b0318234dff9bc04a7a4bbf184,
         type: 3}
     - target: {fileID: 4569284412574691449, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
@@ -16685,6 +16685,12 @@ PrefabInstance:
       propertyPath: SmokeyPrefab
       value: 
       objectReference: {fileID: 7914337133693660626, guid: 1b30617b81f24c049be03e071c650c4b,
+        type: 3}
+    - target: {fileID: 2168787672685650611, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 25498ac28e9ce4a3993d929b3fd2882a,
         type: 3}
     - target: {fileID: 4569284412574691449, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
