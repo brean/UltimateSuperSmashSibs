@@ -4,8 +4,10 @@ using UnityEngine;
 using System.Linq;
 using System;
 /**
-* Adds new Player when a joystick gets connected or a key is pressed
-*/
+ * Adds new Player when a joystick gets connected or a key is pressed
+ *
+ * TODO: replace this with cinemachine!
+ */
 
 public class PlayerManager : MonoBehaviour
 {
@@ -67,29 +69,7 @@ public class PlayerManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        if ((Input.GetKeyDown(KeyCode.UpArrow) ||
-            Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.LeftArrow) ||
-            Input.GetKeyDown(KeyCode.RightArrow)))
-        {
-            CreatePlayer("ArrowKeys");
-        }
-        if ((Input.GetKeyDown(KeyCode.W) ||
-            Input.GetKeyDown(KeyCode.S) ||
-            Input.GetKeyDown(KeyCode.A) ||
-            Input.GetKeyDown(KeyCode.D)))
-        {
-            CreatePlayer("WasdKeys");
-        }
-        for (int i = 0; i < 4; i++)
-        {
-            if (Input.GetAxis("Joy" + i + "Horizontal") > .2 ||
-                Input.GetAxis("Joy" + i + "Horizontal") > .2)
-            {
-                CreatePlayer("Joy" + i);
-            }
-        }*/
+    {
 
         if(PlayerDict.Count != 0)
         {

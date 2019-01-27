@@ -5,13 +5,11 @@ using System.Linq;
 
 public class InputControl : MonoBehaviour
 {
+    [Tooltip("Player information")]
 	public Player player;
 
     [Tooltip("character for input control")]
     public Character character;
-
-    [Tooltip("Number of the joystick")]
-    public string inputName;
 
     [Tooltip("speed of the player")]
     public float speed = .01f;
@@ -45,14 +43,54 @@ public class InputControl : MonoBehaviour
     void Start()
     {
 		PlayerSelectManager playerSelectManager = FindObjectOfType<PlayerSelectManager>();
-        if (playerSelectManager != null) {
-            player = playerSelectManager.getPlayerForCharacter(character);
+        if (playerSelectManager == null) {
+            // quickly fake inputs for testing
+            PlayerSelectManager.instance = new PlayerSelectManager();
+            PlayerSelectManager.instance.players = new List<Player>
+            {
+                new Player{
+                    character = Character.princess,
+                    inputType = InputType.Key,
+                    number = 1,
+                    color = Color.red,
+                    team = 0,
+                    active = true,
+                    ready = true
+                },
+                new Player{
+                    character = Character.jock,
+                    inputType = InputType.Key,
+                    number = 2,
+                    color = Color.blue,
+                    team = 0,
+                    active = true,
+                    ready = true
+                },
+                new Player{
+                    character = Character.hipster,
+                    inputType = InputType.Key,
+                    number = 3,
+                    color = Color.green,
+                    team = 1,
+                    active = true,
+                    ready = true
+                },
+                new Player{
+                    character = Character.nerd,
+                    inputType = InputType.Key,
+                    number = 4,
+                    color = Color.yellow,
+                    team = 1,
+                    active = true,
+                    ready = true
+                }
+            };
+            playerSelectManager = PlayerSelectManager.instance;
         }
-        
+        player = playerSelectManager.getPlayerForCharacter(character);
+
         facingRight = true;
 		rb2d = GetComponent<Rigidbody2D>();
-        inputName = this.gameObject.name;
-        Debug.Log("inputname: " + inputName);
 		
 		GetComponent<SpriteRenderer>().sprite = front;
 		initialScale = transform.localScale;
@@ -78,8 +116,7 @@ public class InputControl : MonoBehaviour
         }
         else
         {
-            movePlayer(inputName + "Joy");
-            movePlayer(inputName + "Key");
+            movePlayer(player.inputName());
 
             updateAbility();
         }
@@ -160,11 +197,12 @@ public class InputControl : MonoBehaviour
 
         if (abilityCooldown <= 0)
         {
-            if (Input.GetAxis("UseAbility") == 1)
+            // if (Input.GetAxis("UseAbility") == 1)
+            if (Input.GetKeyDown(player.inputButton()))
             {
-                switch (this.gameObject.name)
+                switch (player.character)
                 {
-                    case "Player1": //Prinsessin
+                    case Character.princess:
                         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
                         foreach (GameObject player in players)
@@ -179,7 +217,7 @@ public class InputControl : MonoBehaviour
                         }
                 
                         break;
-                    case "Player2": //Macho
+                    case Character.jock: //Macho
                         GameObject[] players2 = GameObject.FindGameObjectsWithTag("Player");
 
                         foreach (GameObject player in players2)
@@ -194,12 +232,12 @@ public class InputControl : MonoBehaviour
                         }
 
                         break;
-                    case "Player3": //Hipster
+                    case Character.hipster:
                         GameObject smokey = Instantiate(SmokeyPrefab);
                         smokey.name = "SmokeyWeedyBombyThingy";
                         smokey.transform.position = rb2d.position;
                         break;
-                    case "Player4": //Nerd
+                    case Character.nerd:
                         GameObject[] players3 = GameObject.FindGameObjectsWithTag("Player");
 
                         foreach (GameObject player in players3)
