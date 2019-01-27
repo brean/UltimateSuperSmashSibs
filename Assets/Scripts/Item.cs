@@ -37,6 +37,10 @@ public class Item : MonoBehaviour
                 //Cloud smoke, to invert stuff
                 if (other.gameObject.CompareTag("Player")){
                     Debug.Log("Hipster Smokebomb activated!");
+                    if (other.gameObject.GetComponent<InputControl>().player.character == Character.hipster)
+                    {
+                        break;
+                    }
                     player = other.gameObject;
                     player.GetComponent<InputControl>().invertedTimer = 10f;
                     this.gameObject.SetActive(false);

@@ -191,7 +191,7 @@ public class InputControl : MonoBehaviour
                     case Character.hipster:
                         GameObject smokey = Instantiate(SmokeyPrefab);
                         smokey.name = "SmokeyWeedyBombyThingy";
-                        smokey.transform.position = rb2d.position;
+                        smokey.transform.position = new Vector2(rb2d.position.x, (float)(rb2d.position.y-0.8));
                         break;
                     case Character.nerd:
                         GameObject[] players3 = GameObject.FindGameObjectsWithTag("Player");
