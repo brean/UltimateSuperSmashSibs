@@ -43,11 +43,11 @@ public class PlayerManager : MonoBehaviour
         if (colliders.Length == 2)
         {
             //start
-            colliders[0].offset = new Vector2(-camHalfWidth + mapBorderOffset, 0);
-            colliders[0].size = new Vector2(mapBorderOffset, 100);
+            colliders[0].offset = new Vector2(-camHalfWidth + mapBorderOffset - 10.5f, 0);
+            colliders[0].size = new Vector2(20, 100);
             //end
-            colliders[1].offset = new Vector2(camHalfWidth - mapBorderOffset, 0);
-            colliders[1].size = new Vector2(mapBorderOffset, 100);
+            colliders[1].offset = new Vector2(camHalfWidth - mapBorderOffset + 10.5f, 0);
+            colliders[1].size = new Vector2(20, 100);
         }
 
     }
