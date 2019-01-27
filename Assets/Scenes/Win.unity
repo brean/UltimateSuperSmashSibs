@@ -791,8 +791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade86971a5ff84726876cd55e32476d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wintextteam1: {fileID: 21300000, guid: ed67752510f3d46f9b3f726008477700, type: 3}
-  wintextteam2: {fileID: 21300000, guid: 42fd3aede8da74b7994ea9d867b058a2, type: 3}
+  wintext1: {fileID: 21300000, guid: ed67752510f3d46f9b3f726008477700, type: 3}
+  wintext2: {fileID: 21300000, guid: 42fd3aede8da74b7994ea9d867b058a2, type: 3}
 --- !u!4 &1078797486
 Transform:
   m_ObjectHideFlags: 0
@@ -13716,7 +13716,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7927703338501028670, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168787672685650613, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470608263, guid: 90e5b74abefb04557978b0a11ac7d00d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8706502866885717066, guid: 90e5b74abefb04557978b0a11ac7d00d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845504213034070909, guid: 90e5b74abefb04557978b0a11ac7d00d,
         type: 3}
       propertyPath: m_Enabled
       value: 0
