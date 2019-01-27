@@ -5,18 +5,17 @@ using UnityEngine;
 public class Win : MonoBehaviour
 {
 
-    public GameObject winningPlayer;
-    public GameObject winningTeam;
-
+    public Player winningPlayer;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log(other.gameObject.name + " from team " + "???" + " won!");
-            winningPlayer = other.gameObject;
-            //TODO: winningTeam = winningPlayer.team;
-            //TODO: go to win screen
+            winningPlayer = GameManager.instance.playerForCharacter(
+                            other.gameObject.GetComponent<CharacterSetting>().character);
+            GameManager.instance.winningTeam = winningPlayer.team;
+            GameManager.instance.loadScene("Win");
         }
     }
 }
