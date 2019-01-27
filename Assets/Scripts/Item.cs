@@ -6,9 +6,6 @@ public class Item : MonoBehaviour
 {
     public GameObject player;
 
-
-    public AudioSource audioS;
-
     [Range(1,3)]
     public int itemType;
 
@@ -24,9 +21,7 @@ public class Item : MonoBehaviour
                     Debug.Log("Speedboost activated!");
                     player = other.gameObject;
                     player.GetComponent<InputControl>().speedPlayerUp(0.2f, 2f);
-                    audioS = GetComponent<AudioSource>();
-                    audioS.Play(0);
-                    this.gameObject.SetActive(false);
+                    StartCoroutine(playSoundThenDeactivate());
                 }
                 break;
             case 2:
@@ -50,5 +45,11 @@ public class Item : MonoBehaviour
         }
     }
 
-    
+    IEnumerator playSoundThenDeactivate() {
+        gameObject.GetComponent<AudioSource>().Play(0);
+        yield return new WaitForSecondsRealtime(0.5f);
+        this.gameObject.SetActive(false);
+    }
+
+
 }
