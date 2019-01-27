@@ -97,8 +97,12 @@ MonoBehaviour:
   stunTimer: 0
   snatchedBy: {fileID: 0}
   snatchedTimer: 0
+  ghostBox: []
   backwardsTimer: 0
-  SmokeyPrefab: {fileID: 0}
+  SmokeyPrefab: {fileID: 7914337133693660626, guid: 1b30617b81f24c049be03e071c650c4b,
+    type: 3}
+  GhostyPrefab: {fileID: 7914337133693660626, guid: 6487960b06bda484e946da66dbfa21fd,
+    type: 3}
 --- !u!212 &2168787672685650611
 SpriteRenderer:
   m_ObjectHideFlags: 0
