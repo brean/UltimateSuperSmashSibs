@@ -4,7 +4,7 @@
 Game for the Global Game Jam 2019, developed in Bremen (see https://globalgamejam.org/2019/games/ultimate-super-smash-sibs )
 
 ## Description
-*Ultimate Super Smash Sibs* is a Competitive Co-op sibling obstacle course.
+*Ultimate Super Smash Sibs* is a Competitive Co-op sibling obstacle course puzzle game.
 
 Four children were playing around in the woods when they hear their parents calling them for dinner! Feeling their empty stomaches they quickly form two teams and start their journey. Which team will win? Who's home first?
 
