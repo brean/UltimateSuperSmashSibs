@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerCharacterSelection : MonoBehaviour
 {
@@ -48,8 +49,17 @@ public class PlayerCharacterSelection : MonoBehaviour
             // player is already ready, he should not be able to change the other stuff again!
             return;
         }
-        float moveHorizontal = Input.GetAxisRaw(player.inputName() + "Horizontal");
-        float moveVertical = Input.GetAxisRaw(player.inputName() + "Vertical");
+        float moveHorizontal = 0;
+        float moveVertical = 0;
+        if (player.inputType == InputType.Joy) {
+            Gamepad pad = Gamepad.all[player.number-1];
+            Vector2 dpad = pad.dpad.ReadValue();
+            moveHorizontal = dpad.x;
+            moveVertical = dpad.y;
+        } else {
+            moveHorizontal = Input.GetAxisRaw(player.inputName() + "Horizontal");
+            moveVertical = Input.GetAxisRaw(player.inputName() + "Vertical");
+        }
         if (moveVertical > .7 && !nextPlayer)
         {
             nextPlayer = true;

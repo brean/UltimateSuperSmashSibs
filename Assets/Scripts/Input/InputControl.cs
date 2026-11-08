@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Linq;
 
 public class InputControl : MonoBehaviour
@@ -120,8 +122,17 @@ public class InputControl : MonoBehaviour
     }
 
     void movePlayer(string input) {
-        float moveHorizontal = Input.GetAxis(input + "Horizontal");
-        float moveVertical = -Input.GetAxis(input + "Vertical");
+        float moveHorizontal = 0;
+        float moveVertical = 0;
+        if (player.inputType == InputType.Joy) {
+            Gamepad pad = Gamepad.all[player.number-1];
+            Vector2 dpad = pad.dpad.ReadValue();
+            moveHorizontal = dpad.x;
+            moveVertical = dpad.y;
+        } else {
+            moveHorizontal = Input.GetAxisRaw(player.inputName() + "Horizontal");
+            moveVertical = Input.GetAxisRaw(player.inputName() + "Vertical");
+        }
         if (invertedTimer > 0f)
         {
             invertedTimer -= Time.deltaTime;
